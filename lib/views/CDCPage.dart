@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:swg_flutter/views/CDCIntershipPage.dart';
 
 class CDCPage extends StatelessWidget {
-  const CDCPage({super.key});
-
+  CDCPage({super.key, required this.setIndex});
+  Function(dynamic) setIndex;
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -50,39 +51,47 @@ class CDCPage extends StatelessWidget {
                             )),
                   ),
                 ),
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                    color: Color.fromARGB(255, 163, 234, 254),
-                    boxShadow: [
-                      BoxShadow(
-                        color: const Color.fromARGB(255, 106, 106, 106)
-                            .withOpacity(.5),
-                        blurRadius: 20.0, // soften the shadow
-                        spreadRadius: 0.0, //extend the shadow
-                        offset: Offset(
-                          5.0, // Move to right 10  horizontally
-                          5.0, // Move to bottom 10 Vertically
+                InkWell(
+                  onTap: () {
+                    // Navigator.of(context).push(MaterialPageRoute(
+                    //     builder: (context) => const CDCIntershipPage()));
+                    Navigator.of(context).pushNamed('/cdcinternshipblogs');
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(12.0)),
+                      color: const Color.fromARGB(255, 163, 234, 254),
+                      boxShadow: [
+                        BoxShadow(
+                          color: const Color.fromARGB(255, 106, 106, 106)
+                              .withOpacity(.5),
+                          blurRadius: 20.0, // soften the shadow
+                          spreadRadius: 0.0, //extend the shadow
+                          offset: const Offset(
+                            5.0, // Move to right 10  horizontally
+                            5.0, // Move to bottom 10 Vertically
+                          ),
+                        )
+                      ],
+                    ),
+                    margin: const EdgeInsets.all(12.0),
+                    child: const SizedBox(
+                      height: 75,
+                      width: double.infinity,
+                      child: Center(
+                        child: Text(
+                          'CDC Internship Blogs',
+                          style: TextStyle(
+                              fontSize: 18.0, fontWeight: FontWeight.bold),
                         ),
-                      )
-                    ],
-                  ),
-                  margin: const EdgeInsets.all(12.0),
-                  child: const SizedBox(
-                    height: 75,
-                    width: double.infinity,
-                    child: Center(
-                      child: Text(
-                        'CDC Internship Blogs',
-                        style: TextStyle(
-                            fontSize: 18.0, fontWeight: FontWeight.bold),
                       ),
                     ),
                   ),
                 ),
                 Container(
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                    borderRadius: const BorderRadius.all(Radius.circular(12.0)),
                     color: const Color.fromARGB(255, 163, 234, 254),
                     boxShadow: [
                       BoxShadow(
@@ -90,7 +99,7 @@ class CDCPage extends StatelessWidget {
                             .withOpacity(.8),
                         blurRadius: 15.0, // soften the shadow
                         spreadRadius: 0.0, //extend the shadow
-                        offset: Offset(
+                        offset: const Offset(
                           5.0, // Move to right 10  horizontally
                           5.0, // Move to bottom 10 Vertically
                         ),

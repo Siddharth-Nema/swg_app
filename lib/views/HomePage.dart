@@ -1,22 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:swg_flutter/views/CDCIntershipPage.dart';
 import 'package:swg_flutter/views/CDCPage.dart';
 import 'package:swg_flutter/views/ProfileView.dart';
 import 'package:swg_flutter/widgets/column_tile.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  int _selectedIndex = 0;
-
-  List<Widget> views = const [ProfileView(), CDCPage()];
+  int _selectedIndex = 1;
+  setIndex(index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
+    List<Widget> views = [
+      ProfileView(),
+      CDCPage(setIndex: setIndex),
+    ];
     return Scaffold(
       appBar: AppBar(
         leading: const Icon(

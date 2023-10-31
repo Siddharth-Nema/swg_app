@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:swg_flutter/views/CDCIntershipPage.dart';
 import 'package:swg_flutter/views/HomePage.dart';
 
 void main() {
@@ -10,8 +11,12 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: HomePage(),
+    return MaterialApp(
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomePage(),
+        '/cdcinternshipblogs': (context) => const CDCIntershipPage(),
+      },
     );
   }
 }
