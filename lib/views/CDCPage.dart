@@ -19,9 +19,9 @@ class CDCPage extends StatelessWidget {
                 const EdgeInsets.symmetric(vertical: 75.0, horizontal: 30.0),
             child: Column(
               children: [
-                const Icon(
-                  Icons.abc,
-                  size: 75,
+                Image.asset(
+                  'assets/images/internship.png',
+                  scale: 5,
                 ),
                 const Text(
                   "Career Development Centre",
