@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:swg_flutter/views/CDCIntershipPage.dart';
 import 'package:swg_flutter/views/CDCPage.dart';
 import 'package:swg_flutter/views/ProfileView.dart';
-import 'package:swg_flutter/widgets/column_tile.dart';
+import 'package:swg_flutter/views/StudyMaterial.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({super.key});
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -24,6 +24,7 @@ class _HomePageState extends State<HomePage> {
     List<Widget> views = [
       ProfileView(),
       CDCPage(setIndex: setIndex),
+      const StudyMaterial(),
     ];
     return Scaffold(
       appBar: AppBar(
@@ -58,7 +59,7 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: BottomAppBar(
         notchMargin: 10.0,
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 16.0),
+          padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 16.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -73,9 +74,16 @@ class _HomePageState extends State<HomePage> {
                   size: 30.0,
                 ),
               ),
-              ImageIcon(
-                AssetImage('assets/images/grad.png'),
-                size: 30.0,
+              GestureDetector(
+                child: const ImageIcon(
+                  AssetImage('assets/images/grad.png'),
+                  size: 30.0,
+                ),
+                onTap: () {
+                  setState(() {
+                    _selectedIndex = 2;
+                  });
+                },
               ),
               SizedBox(
                 width: 20,

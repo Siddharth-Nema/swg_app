@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:swg_flutter/views/CDCIntershipPage.dart';
 
 class CDCPage extends StatelessWidget {
   CDCPage({super.key, required this.setIndex});
@@ -99,6 +98,7 @@ class CDCPage extends StatelessWidget {
                             .withOpacity(.8),
                         blurRadius: 15.0, // soften the shadow
                         spreadRadius: 0.0, //extend the shadow
+
                         offset: const Offset(
                           5.0, // Move to right 10  horizontally
                           5.0, // Move to bottom 10 Vertically
