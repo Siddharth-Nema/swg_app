@@ -54,7 +54,9 @@ class StudyMaterial extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 YearWiseTile(
-                    year: "First", desc: "Study Material for phy and chem sem"),
+                  year: "First",
+                  desc: "Study Material for phy and chem sem",
+                ),
                 YearWiseTile(
                     year: "Second", desc: "Study Material for all departments")
               ],

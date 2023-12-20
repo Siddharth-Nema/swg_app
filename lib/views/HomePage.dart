@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:swg_flutter/views/CDCIntershipPage.dart';
 import 'package:swg_flutter/views/CDCPage.dart';
 import 'package:swg_flutter/views/ProfileView.dart';
-import 'package:swg_flutter/views/StudyMaterial.dart';
+import 'package:swg_flutter/views/YearWiseStudyMaterial/FirstYearSM.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -22,9 +21,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     List<Widget> views = [
-      ProfileView(),
+      const ProfileView(),
       CDCPage(setIndex: setIndex),
-      const StudyMaterial(),
+      const FirstYearSM(),
     ];
     return Scaffold(
       appBar: AppBar(
