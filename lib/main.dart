@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:swg_flutter/views/CDCIntershipPage.dart';
 import 'package:swg_flutter/views/EventView.dart';
 import 'package:swg_flutter/views/HomePage.dart';
+import 'package:swg_flutter/views/LoginPage.dart';
 
 void main() {
   runApp(const MainApp());
@@ -16,7 +17,7 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        '/': (context) => HomePage(),
+        '/': (context) => LoginPage(),
         '/cdcinternshipblogs': (context) => const CDCIntershipPage(),
         '/event-view': (context) => EventView(event: event),
       },
