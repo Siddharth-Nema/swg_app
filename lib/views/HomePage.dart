@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:swg_flutter/views/BenifitsOfInstiIdPage.dart';
 import 'package:swg_flutter/views/CDCPage.dart';
 import 'package:swg_flutter/views/ProfileView.dart';
 import 'package:swg_flutter/views/YearWiseStudyMaterial/FirstYearSM.dart';
+import 'package:swg_flutter/views/LandingPage.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -11,7 +13,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _selectedIndex = 1;
+  int _selectedIndex = 4;
   setIndex(index) {
     setState(() {
       _selectedIndex = index;
@@ -24,6 +26,8 @@ class _HomePageState extends State<HomePage> {
       const ProfileView(),
       CDCPage(setIndex: setIndex),
       const FirstYearSM(),
+      const LandingPage(),
+      const BenifitsOfInstiId()
     ];
     return Scaffold(
       appBar: AppBar(

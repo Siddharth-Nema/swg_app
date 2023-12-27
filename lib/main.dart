@@ -14,7 +14,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/event-view',
+      initialRoute: '/',
       routes: {
         '/': (context) => HomePage(),
         '/cdcinternshipblogs': (context) => const CDCIntershipPage(),
