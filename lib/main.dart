@@ -17,7 +17,7 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        '/': (context) => LoginPage(),
+        '/': (context) => HomePage(),
         '/cdcinternshipblogs': (context) => const CDCIntershipPage(),
         '/event-view': (context) => EventView(event: event),
       },

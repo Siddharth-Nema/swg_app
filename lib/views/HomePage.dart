@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:swg_flutter/views/BenifitsOfInstiIdPage.dart';
 import 'package:swg_flutter/views/CDCPage.dart';
 import 'package:swg_flutter/views/ProfileView.dart';
+import 'package:swg_flutter/views/SocietiesPage.dart';
 import 'package:swg_flutter/views/YearWiseStudyMaterial/FirstYearSM.dart';
 import 'package:swg_flutter/views/LandingPage.dart';
 
@@ -25,7 +26,7 @@ class _HomePageState extends State<HomePage> {
     List<Widget> views = [
       const ProfileView(),
       CDCPage(setIndex: setIndex),
-      const FirstYearSM(),
+      const SocietiesPage(),
       const LandingPage(),
       const BenifitsOfInstiId()
     ];
