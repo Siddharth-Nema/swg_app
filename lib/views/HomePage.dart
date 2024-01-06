@@ -3,6 +3,7 @@ import 'package:swg_flutter/views/BenifitsOfInstiIdPage.dart';
 import 'package:swg_flutter/views/CDCPage.dart';
 import 'package:swg_flutter/views/ProfileView.dart';
 import 'package:swg_flutter/views/SocietiesPage.dart';
+import 'package:swg_flutter/views/TeamInfo.dart';
 import 'package:swg_flutter/views/YearWiseStudyMaterial/FirstYearSM.dart';
 import 'package:swg_flutter/views/LandingPage.dart';
 
@@ -28,7 +29,8 @@ class _HomePageState extends State<HomePage> {
       CDCPage(setIndex: setIndex),
       const SocietiesPage(),
       const LandingPage(),
-      const BenifitsOfInstiId()
+      const BenifitsOfInstiId(),
+      const TeamInfo()
     ];
     return Scaffold(
       appBar: AppBar(
@@ -92,9 +94,16 @@ class _HomePageState extends State<HomePage> {
               SizedBox(
                 width: 20,
               ),
-              ImageIcon(
-                AssetImage('assets/images/group.png'),
-                size: 30.0,
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    _selectedIndex = 5;
+                  });
+                },
+                child: const ImageIcon(
+                  AssetImage('assets/images/group.png'),
+                  size: 30.0,
+                ),
               ),
               GestureDetector(
                 onTap: () {
