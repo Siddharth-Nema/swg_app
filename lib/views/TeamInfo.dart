@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:swg_flutter/widgets/line_seperator.dart';
 import 'package:swg_flutter/widgets/member_info_tile.dart';
 
 class TeamInfo extends StatelessWidget {
@@ -17,20 +18,30 @@ class TeamInfo extends StatelessWidget {
           length: 2,
           child: Column(
             children: [
-              const TabBar(tabs: [
-                Tab(
-                  child: Text(
-                    "Student Members",
-                    style: TextStyle(color: Colors.black),
-                  ),
+              const TabBar(
+                  indicatorColor: Colors.transparent,
+                  dividerColor: Colors.black,
+                  tabs: [
+                    Tab(
+                      child: Text(
+                        "Student Members",
+                        style: TextStyle(color: Colors.black),
+                      ),
+                    ),
+                    Tab(
+                      child: Text(
+                        "Heads",
+                        style: TextStyle(color: Colors.black),
+                      ),
+                    ),
+                  ]),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  color: Colors.black,
+                  height: 2,
                 ),
-                Tab(
-                  child: Text(
-                    "Heads",
-                    style: TextStyle(color: Colors.black),
-                  ),
-                ),
-              ]),
+              ),
               Expanded(
                   child: TabBarView(children: [
                 ListView(

@@ -8,10 +8,11 @@ class MemberInfoTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
       color: Colors.black,
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -19,14 +20,14 @@ class MemberInfoTile extends StatelessWidget {
                 name,
                 style: const TextStyle(
                     fontSize: 20,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w500,
                     color: Colors.amber),
               ),
               Text(
                 position,
-                style: TextStyle(fontSize: 16, color: Colors.white),
+                style: const TextStyle(fontSize: 12, color: Colors.white),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Row(
@@ -46,7 +47,17 @@ class MemberInfoTile extends StatelessWidget {
             ],
           ),
         ),
-        Image.network("https://placehold.co/100x100/png")
+        Container(
+          height: 110,
+          width: 110,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+                image: NetworkImage("https://placehold.co/100x100/png"),
+                fit: BoxFit.cover),
+            color: Colors.amber,
+            borderRadius: BorderRadius.circular(24),
+          ),
+        )
       ]),
     );
   }
