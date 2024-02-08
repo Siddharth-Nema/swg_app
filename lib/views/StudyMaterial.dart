@@ -48,7 +48,7 @@ class StudyMaterial extends StatelessWidget {
                           ),
                         )),
               )),
-          const Padding(
+          Padding(
             padding: EdgeInsets.all(8.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -56,21 +56,39 @@ class StudyMaterial extends StatelessWidget {
                 YearWiseTile(
                   year: "First",
                   desc: "Study Material for phy and chem sem",
+                  onClick: () {
+                    Navigator.pushNamed(context, "/firstyearstudy");
+                  },
                 ),
                 YearWiseTile(
-                    year: "Second", desc: "Study Material for all departments")
+                  year: "Second",
+                  desc: "Study Material for all departments",
+                  onClick: () {
+                    Navigator.pushNamed(context, "/firstyearstudy");
+                  },
+                )
               ],
             ),
           ),
-          const Padding(
+          Padding(
             padding: EdgeInsets.all(8.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 YearWiseTile(
-                    year: "Third", desc: "Study Material for phy and chem sem"),
+                  year: "Third",
+                  desc: "Study Material for phy and chem sem",
+                  onClick: () {
+                    Navigator.pushNamed(context, "/firstyearstudy");
+                  },
+                ),
                 YearWiseTile(
-                    year: "Fourth", desc: "Study Material for all departments")
+                  year: "Fourth",
+                  desc: "Study Material for all departments",
+                  onClick: () {
+                    Navigator.pushNamed(context, "/firstyearstudy");
+                  },
+                )
               ],
             ),
           )

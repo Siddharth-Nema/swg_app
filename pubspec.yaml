@@ -26,6 +26,15 @@ flutter:
     - assets/images/book.png
     - assets/images/grad.png
     - assets/images/profile.png
-    - assets/images/group.png
+    - assets/images/group.png 
+    - assets/images/blue/book.png
+    - assets/images/blue/grad.png
+    - assets/images/blue/profile.png
+    - assets/images/blue/group.png 
     - assets/images/internship.png
     - assets/images/event_poster.jpg
+    - assets/images/swg.jpg
+    - assets/images/bg.png
+    - assets/images/logo_black.png 
+    
+    

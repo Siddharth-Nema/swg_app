@@ -15,40 +15,50 @@ class LandingPage extends StatelessWidget {
                 topLeft: Radius.circular(30), topRight: Radius.circular(30))),
         child: Column(
           children: [
-            const Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Text(
-                  "Hello Anish!",
-                  style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    "Hello Anish!",
+                    style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    textAlign: TextAlign.left,
                   ),
-                  textAlign: TextAlign.left,
-                ),
-                Text(
-                  "Welcome to the students welfare group app ",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
-                ),
-              ],
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Text(
+                      "Welcome to the students welfare group app ",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
+                    ),
+                  ),
+                ],
+              ),
             ),
             Padding(
               padding:
                   const EdgeInsets.symmetric(horizontal: 8.0, vertical: 16.0),
               child: Column(
                 children: [
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "Upcoming events",
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
-                      ),
-                      const Text("See all >",
+                  const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Upcoming events",
                           style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold))
-                    ],
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                        ),
+                        Text("See all >",
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold))
+                      ],
+                    ),
                   ),
                   CarouselSlider(
                     options: CarouselOptions(height: 200.0),

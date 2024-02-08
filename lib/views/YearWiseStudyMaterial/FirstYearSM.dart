@@ -6,56 +6,90 @@ class FirstYearSM extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15.0),
+    return Scaffold(
+      appBar: AppBar(
+        actionsIconTheme: const IconThemeData(color: Colors.black),
+        leading: IconButton(
+            icon: const Icon(
+              Icons.chevron_left,
+              color: Colors.black,
+              size: 36,
+            ),
+            color: Colors.black,
+            onPressed: () {
+              Navigator.of(context).pop();
+            }),
+        actions: const [
+          Icon(
+            Icons.search,
+            color: Colors.black,
+            size: 28,
+          ),
+          Icon(
+            Icons.more_vert,
+            color: Colors.black,
+            size: 28,
+          ),
+        ],
+        centerTitle: true,
+        title: const Text(
+          "Study Material",
+          style: TextStyle(color: Colors.black),
+        ),
+        shadowColor: Colors.transparent,
+        backgroundColor: Colors.transparent,
       ),
-      color: const Color.fromARGB(255, 163, 234, 254),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 32),
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Image.network(
-                "https://cdn-icons-png.flaticon.com/512/2847/2847502.png",
-                scale: 5,
-              ),
-            ),
-            const Text(
-              "Study Material \n for Freshers",
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
-                "All the material you need a night before exam compiled in one place.",
-                style: TextStyle(
-                  fontSize: 12,
+      body: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15.0),
+        ),
+        color: const Color.fromARGB(255, 163, 234, 254),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 32),
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Image.network(
+                  "https://cdn-icons-png.flaticon.com/512/2847/2847502.png",
+                  scale: 5,
                 ),
+              ),
+              const Text(
+                "Study Material \n for Freshers",
                 textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                children: List.generate(
-                    150 ~/ 1,
-                    (index) => Expanded(
-                          child: Container(
-                            color: index % 2 == 0
-                                ? Colors.transparent
-                                : Colors.black,
-                            height: 2,
-                          ),
-                        )),
+              const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Text(
+                  "All the material you need a night before exam compiled in one place.",
+                  style: TextStyle(
+                    fontSize: 12,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
               ),
-            ),
-            const DepressedButton(text: 'Study Material'),
-            const DepressedButton(text: 'Previous Year Papers'),
-            const DepressedButton(text: 'NPTEL Channel')
-          ],
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: List.generate(
+                      150 ~/ 1,
+                      (index) => Expanded(
+                            child: Container(
+                              color: index % 2 == 0
+                                  ? Colors.transparent
+                                  : Colors.black,
+                              height: 2,
+                            ),
+                          )),
+                ),
+              ),
+              const DepressedButton(text: 'Study Material'),
+              const DepressedButton(text: 'Previous Year Papers'),
+              const DepressedButton(text: 'NPTEL Channel')
+            ],
+          ),
         ),
       ),
     );

@@ -32,7 +32,7 @@ Join us for the PDS Doubt Session, where we'll tackle all your doubts. This inte
 
 Register at : https://student-welfare-group.com/
 
-See you there!
+See you there!
 """,
     image: "event-poster.jpg",
     date: " OCTOBER 13, 1823",
