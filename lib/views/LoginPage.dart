@@ -82,20 +82,25 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ],
             ),
-            const Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text(
-                  "Skip Login",
-                  style: TextStyle(fontSize: 16, color: Color(0xFF88D4FF)),
-                ),
-                Icon(
-                  Icons.chevron_right,
-                  color: Color(0xFF88D4FF),
-                  size: 32,
-                )
-              ],
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, "/");
+              },
+              child: const Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    "Skip Login",
+                    style: TextStyle(fontSize: 16, color: Color(0xFF88D4FF)),
+                  ),
+                  Icon(
+                    Icons.chevron_right,
+                    color: Color(0xFF88D4FF),
+                    size: 32,
+                  )
+                ],
+              ),
             ),
           ],
         ),
