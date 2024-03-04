@@ -57,15 +57,13 @@ class _HomePageState extends State<HomePage> {
         iconTheme: const IconThemeData(color: Colors.black),
         actionsIconTheme: const IconThemeData(color: Colors.black),
         actions: const [
-          Icon(
-            Icons.search,
-            color: Colors.black,
-            size: 28,
-          ),
-          Icon(
-            Icons.more_vert,
-            color: Colors.black,
-            size: 28,
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Icon(
+              Icons.search,
+              color: Colors.black,
+              size: 28,
+            ),
           ),
         ],
         centerTitle: true,
