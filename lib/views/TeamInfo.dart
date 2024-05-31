@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:swg_flutter/widgets/line_seperator.dart';
 import 'package:swg_flutter/widgets/member_info_tile.dart';
 
 class TeamInfo extends StatelessWidget {

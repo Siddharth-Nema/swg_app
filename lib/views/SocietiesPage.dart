@@ -12,7 +12,7 @@ class SocietiesPage extends StatefulWidget {
 class _SocietiesPageState extends State<SocietiesPage> {
   List<Widget> getSocieties() {
     List<Widget> list = [];
-    for (Society society in societies) {
+    for (Society society in GlobalConstants.societies) {
       list.add(Card(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -104,8 +104,9 @@ class _SocietiesPageState extends State<SocietiesPage> {
               );
             }, suggestionsBuilder:
                     (BuildContext context, SearchController controller) {
-              return List<ListTile>.generate(societies.length, (int index) {
-                final String item = societies[index].name;
+              return List<ListTile>.generate(GlobalConstants.societies.length,
+                  (int index) {
+                final String item = GlobalConstants.societies[index].name;
                 return ListTile(
                   title: Text(item),
                   onTap: () {

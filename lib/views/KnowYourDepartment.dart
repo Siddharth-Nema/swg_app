@@ -9,7 +9,7 @@ class KnowYourDepartment extends StatelessWidget {
   List<DepartmentTile> getDepartments() {
     List<DepartmentTile> deps = [];
 
-    for (Branch branch in branches) {
+    for (Branch branch in GlobalConstants.branches) {
       deps.add(DepartmentTile(branch: branch));
     }
     print("here");

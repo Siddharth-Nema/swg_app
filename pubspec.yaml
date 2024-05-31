@@ -1,17 +1,18 @@
 name: swg_flutter
 description: A new Flutter project.
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0
 
 environment:
-  sdk: '>=3.1.0 <4.0.0'
+  sdk: ">=3.1.0 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  flutter_linkify: 
-  url_launcher:  
+  flutter_linkify:
+  url_launcher:
   carousel_slider: ^4.0.0
+  google_fonts: 6.1.0
 
 dev_dependencies:
   flutter_test:
@@ -26,11 +27,11 @@ flutter:
     - assets/images/book.png
     - assets/images/grad.png
     - assets/images/profile.png
-    - assets/images/group.png 
+    - assets/images/group.png
     - assets/images/blue/book.png
     - assets/images/blue/grad.png
     - assets/images/blue/profile.png
-    - assets/images/blue/group.png 
+    - assets/images/blue/group.png
     - assets/images/internship.png
     - assets/images/event_poster.jpg
     - assets/images/swg.jpg
@@ -41,6 +42,4 @@ flutter:
     - assets/images/image9.png
     - assets/images/image10.png
     - assets/images/cos1.png
-    - assets/images/logo_black.png 
-    
-    
+    - assets/images/logo_black.png

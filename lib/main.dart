@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:swg_flutter/views/CDC/CDCIntershipPage.dart';
 import 'package:swg_flutter/views/EventView.dart';
 import 'package:swg_flutter/views/BaseLayout.dart';
@@ -16,6 +17,20 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        textTheme: GoogleFonts.poppinsTextTheme(),
+        bottomAppBarTheme: const BottomAppBarTheme(
+          color: Colors.white,
+          height: 60,
+          padding: EdgeInsets.all(0),
+          elevation: 0,
+        ),
+        floatingActionButtonTheme: const FloatingActionButtonThemeData(
+          // backgroundColor: Colors.blue,
+          elevation: 5,
+          shape: CircleBorder(),
+        ),
+      ),
       debugShowCheckedModeBanner: false,
       initialRoute: '/login',
       routes: {

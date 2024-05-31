@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:swg_flutter/constants.dart';
 import 'package:swg_flutter/widgets/StudyMaterial/year_wise_tab.dart';
 
 class BenifitsOfInstiId extends StatelessWidget {
@@ -10,7 +11,7 @@ class BenifitsOfInstiId extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15.0),
       ),
-      color: const Color.fromARGB(255, 163, 234, 254),
+      color: GlobalConstants.kPrimaryBlueColor,
       child: Column(
         children: [
           Padding(
@@ -59,7 +60,7 @@ class BenifitsOfInstiId extends StatelessWidget {
                     color: Colors.white,
                   ),
                   width: 180,
-                  child: Padding(
+                  child: const Padding(
                     padding: EdgeInsets.all(15.0),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,

@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:swg_flutter/views/BenifitsOfInstiIdPage.dart';
 import 'package:swg_flutter/views/CDC/CDCPage.dart';
 import 'package:swg_flutter/views/CommunityPage.dart';
-import 'package:swg_flutter/views/ProfileView.dart';
-import 'package:swg_flutter/widgets/SideBarView.dart';
-import 'package:swg_flutter/views/StudyMaterial.dart';
-import 'package:swg_flutter/views/YearWiseStudyMaterial/FirstYearSM.dart';
 import 'package:swg_flutter/views/LandingPage.dart';
-import 'package:swg_flutter/views/logoView.dart';
+import 'package:swg_flutter/views/ProfileView.dart';
+import 'package:swg_flutter/views/StudyMaterial.dart';
+import 'package:swg_flutter/widgets/SideBarView.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -27,7 +24,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final scaffoldKey = GlobalKey<ScaffoldState>();
     List<Widget> views = [
       const StudyMaterial(),
       CDCPage(setIndex: setIndex),
@@ -36,14 +32,8 @@ class _HomePageState extends State<HomePage> {
         key: GlobalObjectKey(""),
       ),
       const ProfileView(),
-      // const FirstYearSM(),
-      // const BenifitsOfInstiId(),
-      // const SideBarView(),
-      // const LogoView()
     ];
-    PageController controller = PageController(
-      initialPage: 2,
-    );
+    PageController controller = PageController(initialPage: 2);
     List<String> titles = [
       "Study Material",
       "CDC",
@@ -75,13 +65,13 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.transparent,
       ),
       body: PageView(
-        children: views,
         controller: controller,
         onPageChanged: (index) {
           setState(() {
             _selectedIndex = index;
           });
         },
+        children: views,
       ),
       drawer: const SideBarView(),
       bottomNavigationBar: BottomAppBar(

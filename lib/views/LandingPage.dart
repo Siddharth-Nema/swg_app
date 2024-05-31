@@ -1,5 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:swg_flutter/constants.dart';
+import 'package:swg_flutter/models/Department.dart';
 // ...
 
 class LandingPage extends StatelessWidget {
@@ -9,10 +11,11 @@ class LandingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        decoration: const BoxDecoration(
-            color: Color.fromARGB(255, 163, 234, 254),
-            borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(30), topRight: Radius.circular(30))),
+        decoration: BoxDecoration(
+            color: GlobalConstants.kPrimaryBlueColor,
+            borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(30),
+                topRight: const Radius.circular(30))),
         child: Column(
           children: [
             const Padding(
@@ -28,14 +31,6 @@ class LandingPage extends StatelessWidget {
                     ),
                     textAlign: TextAlign.left,
                   ),
-                  // Padding(
-                  //   padding: EdgeInsets.all(8.0),
-                  //   child: Text(
-                  //     "Welcome to the students welfare group app ",
-                  //     style:
-                  //         TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
-                  //   ),
-                  // ),
                 ],
               ),
             ),
@@ -139,8 +134,98 @@ class LandingPage extends StatelessWidget {
                       );
                     }).toList(),
                   ),
-                  element,
-                  element
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(20)),
+                        boxShadow: [
+                          BoxShadow(
+                            color: GlobalConstants.ShodowBlueColor,
+
+                            blurRadius: 4.0,
+                            spreadRadius: 0.0,
+                            offset: const Offset(
+                                4.0, 4.0), // shadow direction: bottom right
+                          )
+                        ],
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          children: [
+                            const Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Padding(
+                                    padding: EdgeInsets.all(8.0),
+                                    child: Text(
+                                      "Know your department",
+                                      style: TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold),
+                                    )),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            SizedBox(
+                              child: Padding(
+                                padding: const EdgeInsets.all(0),
+                                child: GridView.count(
+                                    physics:
+                                        const NeverScrollableScrollPhysics(),
+                                    shrinkWrap: true,
+                                    crossAxisCount: 3,
+                                    childAspectRatio: 1.25,
+                                    children: <Widget>[
+                                      ...GlobalConstants.derpartments
+                                          .map((department) => DepartmentCard(
+                                              department: department))
+                                          .toList(),
+                                      Column(
+                                        children: [
+                                          Container(
+                                            width: 45,
+                                            height: 45,
+                                            decoration: BoxDecoration(
+                                              color: Colors.white,
+                                              border: Border.all(
+                                                  color: Colors.black,
+                                                  width: 1.5),
+                                              borderRadius:
+                                                  BorderRadius.circular(100),
+                                            ),
+                                            padding: const EdgeInsets.all(8),
+                                            child: const Center(
+                                              child: Icon(
+                                                  Icons.arrow_forward_sharp,
+                                                  size: 24,
+                                                  fill: 0,
+                                                  weight: 0.2,
+                                                  grade: 0.5,
+                                                  color: Colors.black),
+                                            ),
+                                          ),
+                                          const Text(
+                                            "View All",
+                                            style: TextStyle(
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.bold),
+                                          )
+                                        ],
+                                      )
+                                    ]),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -151,76 +236,10 @@ class LandingPage extends StatelessWidget {
   }
 }
 
-final Widget element = Padding(
-  padding: const EdgeInsets.all(16.0),
-  child: Container(
-    decoration: const BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.all(Radius.circular(10))),
-    child: Column(
-      children: [
-        const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Text(
-              "Know your department",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            )),
-        SizedBox(
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: GridView.count(
-                physics: const NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                crossAxisSpacing: 15,
-                mainAxisSpacing: 15,
-                crossAxisCount: 3,
-                children: <Widget>[
-                  DepartmentCard(
-                    title: "CSE",
-                    image: "assets/images/image6.png",
-                  ),
-                  DepartmentCard(
-                    title: "ECE",
-                    image: "assets/images/image7.png",
-                  ),
-                  DepartmentCard(
-                    title: "EEE",
-                    image: "assets/images/image8.png",
-                  ),
-                  DepartmentCard(
-                    title: "MECH",
-                    image: "assets/images/image9.png",
-                  ),
-                  DepartmentCard(
-                    title: "CIVIL",
-                    image: "assets/images/image10.png",
-                  ),
-                  Container(
-                    // decoration: const BoxDecoration(color: Colors.amber),
-                    child: const Column(
-                      children: [
-                        Icon(Icons.arrow_circle_right_outlined,
-                            size: 50, color: Colors.black),
-                        Text(
-                          "View All",
-                          style: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold),
-                        )
-                      ],
-                    ),
-                  )
-                ]),
-          ),
-        )
-      ],
-    ),
-  ),
-);
-
 class DepartmentCard extends StatelessWidget {
-  String title;
-  String image;
-  DepartmentCard({super.key, required this.title, required this.image});
+  Department department;
+
+  DepartmentCard({super.key, required this.department});
 
   @override
   Widget build(BuildContext context) {
@@ -228,9 +247,9 @@ class DepartmentCard extends StatelessWidget {
       // decoration: const BoxDecoration(color: Colors.amber),
       child: Column(
         children: [
-          Image.asset(image, scale: 1.5),
+          Image.asset(department.image, scale: 1.5),
           Text(
-            title,
+            department.name,
             style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
           )
         ],
