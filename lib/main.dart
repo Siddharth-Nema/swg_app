@@ -27,6 +27,7 @@ class MainApp extends StatelessWidget {
           systemOverlayStyle: SystemUiOverlayStyle(
             statusBarColor: Colors.white,
             statusBarIconBrightness: Brightness.dark,
+            systemNavigationBarColor: Colors.white,
           ),
         ),
         textTheme: GoogleFonts.poppinsTextTheme(),

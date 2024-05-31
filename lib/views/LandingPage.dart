@@ -19,6 +19,7 @@ class LandingPage extends StatelessWidget {
                 topRight: const Radius.circular(30))),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          
           children: [
             const Padding(
               padding: EdgeInsets.fromLTRB(16, 16, 16, 0),
