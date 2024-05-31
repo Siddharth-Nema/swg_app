@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:swg_flutter/constants.dart';
 
 class CDCPage extends StatelessWidget {
   CDCPage({super.key, required this.setIndex});
@@ -57,23 +58,7 @@ class CDCPage extends StatelessWidget {
                     Navigator.of(context).pushNamed('/cdcinternshipblogs');
                   },
                   child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius:
-                          const BorderRadius.all(Radius.circular(12.0)),
-                      color: const Color.fromARGB(255, 163, 234, 254),
-                      boxShadow: [
-                        BoxShadow(
-                          color: const Color.fromARGB(255, 106, 106, 106)
-                              .withOpacity(.5),
-                          blurRadius: 20.0, // soften the shadow
-                          spreadRadius: 0.0, //extend the shadow
-                          offset: const Offset(
-                            5.0, // Move to right 10  horizontally
-                            5.0, // Move to bottom 10 Vertically
-                          ),
-                        )
-                      ],
-                    ),
+                    decoration: GlobalStyles.cardDeco,
                     margin: const EdgeInsets.all(12.0),
                     child: const SizedBox(
                       height: 75,
@@ -89,23 +74,7 @@ class CDCPage extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  decoration: BoxDecoration(
-                    borderRadius: const BorderRadius.all(Radius.circular(12.0)),
-                    color: const Color.fromARGB(255, 163, 234, 254),
-                    boxShadow: [
-                      BoxShadow(
-                        color: const Color.fromARGB(255, 106, 106, 106)
-                            .withOpacity(.8),
-                        blurRadius: 15.0, // soften the shadow
-                        spreadRadius: 0.0, //extend the shadow
-
-                        offset: const Offset(
-                          5.0, // Move to right 10  horizontally
-                          5.0, // Move to bottom 10 Vertically
-                        ),
-                      )
-                    ],
-                  ),
+                  decoration: GlobalStyles.cardDeco,
                   margin: const EdgeInsets.all(12.0),
                   child: const SizedBox(
                     height: 75,

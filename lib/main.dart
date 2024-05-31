@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:swg_flutter/views/CDC/CDCIntershipPage.dart';
-import 'package:swg_flutter/views/EventView.dart';
-import 'package:swg_flutter/views/BaseLayout.dart';
-import 'package:swg_flutter/views/LoginPage.dart';
-import 'package:swg_flutter/views/YearWiseStudyMaterial/FirstYearSM.dart';
-import 'package:swg_flutter/views/logoView.dart';
+import 'package:swg_flutter/views/subviews/EventView.dart';
+import 'package:swg_flutter/BaseLayout.dart';
+import 'package:swg_flutter/LoginPage/LoginPage.dart';
+import 'package:swg_flutter/views/subviews/YearWiseStudyMaterial/FirstYearSM.dart';
+import 'package:swg_flutter/logoView.dart';
 
 void main() {
   runApp(const MainApp());
@@ -18,6 +19,16 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.white,
+          elevation: 0,
+          iconTheme: IconThemeData(color: Colors.black),
+          actionsIconTheme: IconThemeData(color: Colors.black),
+          systemOverlayStyle: SystemUiOverlayStyle(
+            statusBarColor: Colors.white,
+            statusBarIconBrightness: Brightness.dark,
+          ),
+        ),
         textTheme: GoogleFonts.poppinsTextTheme(),
         bottomAppBarTheme: const BottomAppBarTheme(
           color: Colors.white,

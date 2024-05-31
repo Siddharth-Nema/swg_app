@@ -86,14 +86,9 @@ class CDCIntershipPage extends StatelessWidget {
                     color: const Color.fromARGB(255, 163, 234, 254),
                     boxShadow: [
                       BoxShadow(
-                        color: const Color.fromARGB(255, 106, 106, 106)
-                            .withOpacity(.5),
-                        blurRadius: 20.0, // soften the shadow
+                        color: Colors.black,
+                        blurRadius: 10.0, // soften the shadow
                         spreadRadius: 0.0, //extend the shadow
-                        offset: const Offset(
-                          5.0, // Move to right 10  horizontally
-                          5.0, // Move to bottom 10 Vertically
-                        ),
                       )
                     ],
                   ),

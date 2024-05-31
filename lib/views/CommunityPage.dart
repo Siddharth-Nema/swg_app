@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class CommunityPage extends StatelessWidget {
   const CommunityPage({required Key key}) : super(key: key);
@@ -10,7 +11,7 @@ class CommunityPage extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(145.0),
+          preferredSize: const Size.fromHeight(150.0),
           child: Container(
             decoration:
                 const BoxDecoration(color: Color.fromRGBO(224, 237, 251, 1)),
@@ -21,7 +22,6 @@ class CommunityPage extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Container(
-                        // width: 200,
                         decoration: BoxDecoration(
                           border: Border.all(
                             color: Colors.grey,
@@ -52,14 +52,19 @@ class CommunityPage extends StatelessWidget {
                     labelColor: Color.fromRGBO(0, 0, 0, 1),
                     tabs: [
                       Tab(
-                        text: 'My Feed',
+                        child: SizedBox(
+                            width: double.infinity,
+                            child: Center(child: Text('My Feed'))),
                       ),
                       Tab(
-                        text: 'My Questions',
+                        child: SizedBox(
+                            width: double.infinity,
+                            child: Center(child: Text('My Questions'))),
                       ),
                       Tab(
-                        text: 'My Answers',
-                      ),
+                          child: SizedBox(
+                              width: double.infinity,
+                              child: Center(child: Text('My Answers')))),
                     ],
                   ),
                 ],
@@ -102,10 +107,9 @@ class Feed extends StatelessWidget {
         color: Colors.white,
         boxShadow: const [
           BoxShadow(
-            color: Colors.grey,
-            blurRadius: 2.0,
-            spreadRadius: 0.0,
-            offset: Offset(2.0, 2.0), // shadow direction: bottom right
+            color: Colors.black26,
+            offset: Offset(0, 2),
+            blurRadius: 6.0,
           )
         ],
         borderRadius: BorderRadius.circular(10),
@@ -141,10 +145,9 @@ class Feed extends StatelessWidget {
                 const Expanded(
                   child: TextField(
                     decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: 'Write a comment',
-                      contentPadding: EdgeInsets.all(20),
-                    ),
+                        border: InputBorder.none,
+                        hintText: 'Type Your Answer',
+                        contentPadding: EdgeInsets.symmetric(horizontal: 20)),
                   ),
                 ),
                 IconButton(

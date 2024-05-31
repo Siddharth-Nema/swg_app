@@ -4,9 +4,6 @@ import 'package:swg_flutter/models/Department.dart';
 import 'package:swg_flutter/models/Society.dart';
 
 class GlobalConstants {
-  static Color kPrimaryBlueColor = Color.fromARGB(255, 163, 234, 254);
-  // 55D7FF
-  static Color ShodowBlueColor = Color.fromARGB(255, 85, 215, 255);
   static List<Society> societies = [
     Society(
         name: 'Student Welfare Group',
@@ -43,4 +40,41 @@ class GlobalConstants {
       image: "assets/images/image10.png",
     ),
   ];
+}
+
+class GlobalStyles {
+  static Color kPrimaryBlueColor = const Color.fromARGB(255, 163, 234, 254);
+  static Color shodowBlueColor = const Color.fromARGB(255, 85, 215, 255);
+  static BoxDecoration blueShadowCardDeco = BoxDecoration(
+    color: Colors.white,
+    borderRadius: const BorderRadius.all(Radius.circular(20)),
+    boxShadow: [
+      BoxShadow(
+        color: shodowBlueColor,
+        blurRadius: 4.0,
+        spreadRadius: 0.0,
+        offset: const Offset(4.0, 4.0),
+      )
+    ],
+  );
+
+  static BoxDecoration cardDeco = BoxDecoration(
+    borderRadius: BorderRadius.all(Radius.circular(12.0)),
+    color: Color.fromARGB(255, 163, 234, 254),
+    boxShadow: [
+      BoxShadow(
+        color: Colors.black,
+        blurRadius: 4.0, // soften the shadow
+        spreadRadius: 0.0, //extend the shadow
+      ),
+      //inner shadow
+
+      BoxShadow(
+        color: Color.fromARGB(255, 163, 234, 254),
+        blurRadius: 10.0,
+        spreadRadius: 0.0,
+        offset: Offset(0, 0),
+      ),
+    ],
+  );
 }

@@ -13,13 +13,20 @@ class YearWiseTile extends StatelessWidget {
     return GestureDetector(
       onTap: onClick,
       child: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 6),
         padding: const EdgeInsets.all(8.0),
         height: 100,
         width: (MediaQuery.of(context).size.width - 40) / 2,
-        decoration: const BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(12.0)),
+        decoration: BoxDecoration(
+            borderRadius: const BorderRadius.all(Radius.circular(12.0)),
+            boxShadow: [
+              BoxShadow(
+                  color: Colors.black.withOpacity(0.3),
+                  blurRadius: 3.0,
+                  offset: const Offset(4, 4)),
+            ],
             color: Colors.black,
-            image: DecorationImage(
+            image: const DecorationImage(
                 opacity: 0.4,
                 image: NetworkImage(
                     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpUJ870f29d47y-h4QQn0trUgkpmS5LQcxE8Q_U91HUA&s"),

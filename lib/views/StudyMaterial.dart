@@ -49,9 +49,15 @@ class StudyMaterial extends StatelessWidget {
                         )),
               )),
           Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+            padding: const EdgeInsets.all(16.0),
+            child: GridView(
+              shrinkWrap: true,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+                childAspectRatio: 1.5,
+              ),
               children: [
                 YearWiseTile(
                   year: "First",
@@ -66,15 +72,7 @@ class StudyMaterial extends StatelessWidget {
                   onClick: () {
                     Navigator.pushNamed(context, "/firstyearstudy");
                   },
-                )
-              ],
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
+                ),
                 YearWiseTile(
                   year: "Third",
                   desc: "Study Material for phy and chem sem",

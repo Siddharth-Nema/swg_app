@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:swg_flutter/views/BaseLayout.dart';
-import 'package:swg_flutter/views/LoginPage/InputField.dart';
+import 'package:swg_flutter/BaseLayout.dart';
+import 'package:swg_flutter/LoginPage/InputField.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
