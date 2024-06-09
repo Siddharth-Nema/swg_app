@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:swg_flutter/views/CDC/CDCIntershipPage.dart';
+import 'package:swg_flutter/views/SocietiesPage.dart';
+import 'package:swg_flutter/views/StudyMaterial.dart';
+import 'package:swg_flutter/views/subviews/BenifitsOfInstiIdPage.dart';
 import 'package:swg_flutter/views/subviews/EventView.dart';
 import 'package:swg_flutter/BaseLayout.dart';
 import 'package:swg_flutter/LoginPage/LoginPage.dart';
+import 'package:swg_flutter/views/subviews/KnowYourDepartment.dart';
 import 'package:swg_flutter/views/subviews/YearWiseStudyMaterial/FirstYearSM.dart';
 import 'package:swg_flutter/logoView.dart';
 
@@ -52,6 +56,10 @@ class MainApp extends StatelessWidget {
         '/cdcinternshipblogs': (context) => const CDCIntershipPage(),
         '/event-view': (context) => EventView(event: event),
         '/firstyearstudy': (context) => const FirstYearSM(),
+        '/societies': (context) => const SocietiesPage(),
+        '/knowyourdep': (context) => const KnowYourDepartment(),
+        '/benefitsofinsti': (context) => const BenifitsOfInstiId(),
+        '/studymaterial': (context) => const StudyMaterial(),
       },
     );
   }

@@ -1,24 +1,35 @@
 import 'package:flutter/material.dart';
-import 'package:swg_flutter/models/Branch.dart';
+import 'package:swg_flutter/constants.dart';
+import 'package:swg_flutter/models/Department.dart';
 
 class DepartmentTile extends StatelessWidget {
-  final Branch branch;
+  final Department branch;
   const DepartmentTile({super.key, required this.branch});
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Color.fromARGB(255, 128, 228, 255),
+      color: GlobalStyles.kSecondaryBlueColor,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-      margin: const EdgeInsets.all(14),
+      margin: const EdgeInsets.all(8),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          const Icon(Icons.engineering),
+          const SizedBox(
+            height: 25,
+          ),
+          Image.asset(
+            branch.image,
+            height: 53,
+            width: 53,
+          ),
+          const SizedBox(
+            height: 10,
+          ),
           Text(
             branch.name,
             textAlign: TextAlign.center,
-            style: const TextStyle(fontSize: 12),
+            style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
           )
         ],
       ),

@@ -20,31 +20,32 @@ class GlobalConstants {
 
   static List<Department> derpartments = [
     Department(
-      name: "CSE",
-      image: "assets/images/image6.png",
-    ),
+        name: "Computer Science and Engineering",
+        image: "assets/images/image6.png",
+        code: 'CSE'),
     Department(
-      name: "ECE",
-      image: "assets/images/image7.png",
-    ),
+        name: "Electronics and Electrical Communication Engineering",
+        image: "assets/images/image7.png",
+        code: 'ECE'),
     Department(
-      name: "EEE",
-      image: "assets/images/image8.png",
-    ),
+        name: "Electrical Engineering",
+        image: "assets/images/image8.png",
+        code: 'EEE'),
     Department(
-      name: "MECH",
-      image: "assets/images/image9.png",
-    ),
+        name: "Mechanical Engineering",
+        image: "assets/images/image9.png",
+        code: 'ME'),
     Department(
-      name: "CIVIL",
-      image: "assets/images/image10.png",
-    ),
+        name: "Civil Engineering",
+        image: "assets/images/image10.png",
+        code: 'CE'),
   ];
 }
 
 class GlobalStyles {
-  static Color kPrimaryBlueColor = const Color.fromARGB(255, 163, 234, 254);
+  static Color kPrimaryBlueColor = const Color.fromARGB(255, 211, 250, 255);
   static Color shodowBlueColor = const Color.fromARGB(255, 85, 215, 255);
+  static Color kSecondaryBlueColor = const Color.fromARGB(255, 67, 221, 255);
   static BoxDecoration blueShadowCardDeco = BoxDecoration(
     color: Colors.white,
     borderRadius: const BorderRadius.all(Radius.circular(20)),
