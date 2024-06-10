@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:swg_flutter/constants.dart';
 import 'package:swg_flutter/views/CDC/CDCIntershipPage.dart';
 import 'package:swg_flutter/views/SocietiesPage.dart';
 import 'package:swg_flutter/views/StudyMaterial.dart';
@@ -9,6 +10,7 @@ import 'package:swg_flutter/views/subviews/EventView.dart';
 import 'package:swg_flutter/BaseLayout.dart';
 import 'package:swg_flutter/LoginPage/LoginPage.dart';
 import 'package:swg_flutter/views/subviews/KnowYourDepartment.dart';
+import 'package:swg_flutter/views/subviews/NoticeBoard.dart';
 import 'package:swg_flutter/views/subviews/YearWiseStudyMaterial/FirstYearSM.dart';
 import 'package:swg_flutter/logoView.dart';
 
@@ -35,6 +37,18 @@ class MainApp extends StatelessWidget {
           ),
         ),
         textTheme: GoogleFonts.poppinsTextTheme(),
+        tabBarTheme: TabBarTheme(
+          labelColor: Colors.black,
+          unselectedLabelColor: Colors.grey,
+          indicatorSize: TabBarIndicatorSize.tab,
+          indicator: BoxDecoration(
+            borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(10),
+              topRight: Radius.circular(10),
+            ),
+            color: GlobalStyles.kPrimaryBlueColor,
+          ),
+        ),
         bottomAppBarTheme: const BottomAppBarTheme(
           color: Colors.white,
           height: 60,
@@ -60,6 +74,7 @@ class MainApp extends StatelessWidget {
         '/knowyourdep': (context) => const KnowYourDepartment(),
         '/benefitsofinsti': (context) => const BenifitsOfInstiId(),
         '/studymaterial': (context) => const StudyMaterial(),
+        '/noticeboard': (context) => const NoticeBoard(),
       },
     );
   }
