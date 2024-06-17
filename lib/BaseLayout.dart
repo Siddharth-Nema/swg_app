@@ -24,16 +24,22 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    PageController controller = PageController(initialPage: 2);
     List<Widget> views = [
       const StudyMaterial(),
       CDCPage(setIndex: setIndex),
-      const LandingPage(),
+      LandingPage(toPage: (index) {
+        setIndex(index);
+        controller.animateToPage(index,
+            duration: const Duration(milliseconds: 500),
+            curve: Curves.decelerate);
+      }),
       const CommunityPage(
         key: GlobalObjectKey(""),
       ),
       const ProfileView(),
     ];
-    PageController controller = PageController(initialPage: 2);
+
     List<String> titles = [
       "Study Material",
       "CDC",

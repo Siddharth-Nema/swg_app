@@ -93,7 +93,10 @@ class SideBarView extends StatelessWidget {
                         route: '/knowyourdep',
                       ),
                       Options(title: "Societies of KGP", route: '/societies'),
-                      Options(title: "Featured Blogs"),
+                      Options(
+                        title: "Featured Blogs",
+                        route: '/cdcinternshipblogs',
+                      ),
                       Options(
                           title: "Benifits of Insti-ID",
                           route: '/benefitsofinsti'),
@@ -140,7 +143,7 @@ class Options extends StatelessWidget {
         ),
         child: Text(
           title,
-          style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),
+          style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w500),
         ),
       ),
     );

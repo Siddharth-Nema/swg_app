@@ -72,9 +72,9 @@ class KnowYourDepartment extends StatelessWidget {
               ),
               GridView.count(
                 crossAxisCount: 2,
-                children: getDepartments(),
                 physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
+                children: getDepartments(),
               )
             ]),
           ),

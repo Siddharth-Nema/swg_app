@@ -7,7 +7,8 @@ import 'package:swg_flutter/widgets/StudyMaterial/year_wise_tab.dart';
 // ...
 
 class LandingPage extends StatelessWidget {
-  const LandingPage({super.key});
+  final Function toPage;
+  const LandingPage({super.key, required this.toPage});
 
   @override
   Widget build(BuildContext context) {
@@ -77,20 +78,25 @@ class LandingPage extends StatelessWidget {
                       const SizedBox(height: 12),
                       Column(
                         children: [
-                          const Padding(
-                            padding: EdgeInsets.all(8.0),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text(
+                                const Text(
                                   "Study Material",
                                   style: TextStyle(
                                       fontSize: 18,
                                       fontWeight: FontWeight.bold),
                                 ),
-                                Text("See all >",
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.w500))
+                                GestureDetector(
+                                  onTap: () {
+                                    toPage(0);
+                                  },
+                                  child: const Text("See all >",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w500)),
+                                )
                               ],
                             ),
                           ),
