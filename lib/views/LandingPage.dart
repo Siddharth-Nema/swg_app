@@ -28,15 +28,46 @@ class LandingPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Padding(
-                  padding: EdgeInsets.fromLTRB(16, 16, 16, 0),
-                  child: Text(
-                    "Hello Anish!",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
+                // const Padding(
+                //   padding: EdgeInsets.fromLTRB(16, 16, 16, 0),
+                //   child: Text(
+                //     "Hello Anish!",
+                //     style: TextStyle(
+                //       fontSize: 20,
+                //       fontWeight: FontWeight.bold,
+                //     ),
+                //     textAlign: TextAlign.left,
+                //   ),
+                // ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: InkWell(
+                    onTap: () => Navigator.pushNamed(context, "/noticeboard"),
+                    child: Container(
+                      padding: const EdgeInsets.all(16),
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.grey.shade300,
+                                blurRadius: 10,
+                                spreadRadius: 1)
+                          ]),
+                      width: double.infinity,
+                      child: const Column(
+                        children: [
+                          Text("Open Notice Board",
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black)),
+                        ],
+                      ),
                     ),
-                    textAlign: TextAlign.left,
                   ),
                 ),
                 Padding(
