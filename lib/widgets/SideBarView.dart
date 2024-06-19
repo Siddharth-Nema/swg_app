@@ -100,7 +100,7 @@ class SideBarView extends StatelessWidget {
                       Options(
                           title: "Benifits of Insti-ID",
                           route: '/benefitsofinsti'),
-                      Options(title: "Our Team"),
+                      Options(title: "Our Team", route: '/ourteam'),
                       Options(title: "Contact Us"),
                     ],
                   ),

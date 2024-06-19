@@ -13,6 +13,7 @@ import 'package:swg_flutter/views/subviews/KnowYourDepartment.dart';
 import 'package:swg_flutter/views/subviews/NoticeBoard.dart';
 import 'package:swg_flutter/views/subviews/YearWiseStudyMaterial/FirstYearSM.dart';
 import 'package:swg_flutter/logoView.dart';
+import 'package:swg_flutter/views/subviews/ourTeamPage.dart';
 
 void main() {
   runApp(const MainApp());
@@ -75,6 +76,7 @@ class MainApp extends StatelessWidget {
         '/benefitsofinsti': (context) => const BenifitsOfInstiId(),
         '/studymaterial': (context) => const StudyMaterial(),
         '/noticeboard': (context) => const NoticeBoard(),
+        '/ourteam': (context) => OurTeamPage(),
       },
     );
   }
