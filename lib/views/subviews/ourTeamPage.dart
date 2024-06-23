@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:swg_flutter/constants.dart';
-// import 'package:cached_network_image/cached_network_image.dart';
 import 'package:swg_flutter/models/TeamMember.dart';
 
 class OurTeamPage extends StatefulWidget {
@@ -38,12 +37,6 @@ class _OurTeamPageState extends State<OurTeamPage>
           surfaceTintColor: Colors.white,
           elevation: 1.0,
           toolbarHeight: 120,
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back, color: Colors.black),
-            onPressed: () {
-              // Handle back button
-            },
-          ),
           title: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -183,11 +176,8 @@ class TeamCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 4,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [

@@ -13,241 +13,250 @@ class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Column(
-        children: [
-          Image.asset(
-            'assets/images/swg.jpg',
-            height: 200,
-          ),
-          Container(
-            decoration: BoxDecoration(
-                color: GlobalStyles.kPrimaryBlueColor,
-                borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(30),
-                    topRight: Radius.circular(30))),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                // const Padding(
-                //   padding: EdgeInsets.fromLTRB(16, 16, 16, 0),
-                //   child: Text(
-                //     "Hello Anish!",
-                //     style: TextStyle(
-                //       fontSize: 20,
-                //       fontWeight: FontWeight.bold,
-                //     ),
-                //     textAlign: TextAlign.left,
-                //   ),
-                // ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: InkWell(
-                    onTap: () => Navigator.pushNamed(context, "/noticeboard"),
-                    child: Container(
-                      padding: const EdgeInsets.all(16),
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
-                          boxShadow: [
-                            BoxShadow(
-                                color: Colors.grey.shade300,
-                                blurRadius: 10,
-                                spreadRadius: 1)
-                          ]),
-                      width: double.infinity,
-                      child: const Column(
-                        children: [
-                          Text("Open Notice Board",
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black)),
-                        ],
-                      ),
-                    ),
+      child: Container(
+        color: Colors.white,
+        child: Column(
+          children: [
+            Image.asset(
+              'assets/images/swg.jpg',
+              height: 200,
+            ),
+            Container(
+              decoration: BoxDecoration(
+                  color: GlobalStyles.kPrimaryBlueColor,
+                  borderRadius: const BorderRadius.only(
+                      topLeft: Radius.circular(30),
+                      topRight: Radius.circular(30))),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // const Padding(
+                  //   padding: EdgeInsets.fromLTRB(16, 16, 16, 0),
+                  //   child: Text(
+                  //     "Hello Anish!",
+                  //     style: TextStyle(
+                  //       fontSize: 20,
+                  //       fontWeight: FontWeight.bold,
+                  //     ),
+                  //     textAlign: TextAlign.left,
+                  //   ),
+                  // ),
+                  const SizedBox(
+                    height: 10,
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 8.0, vertical: 16.0),
-                  child: Column(
-                    children: [
-                      const Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: InkWell(
+                      onTap: () => Navigator.pushNamed(context, "/noticeboard"),
+                      child: Container(
+                        padding: const EdgeInsets.all(16),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.grey.shade300,
+                                  blurRadius: 10,
+                                  spreadRadius: 1)
+                            ]),
+                        width: double.infinity,
+                        child: const Column(
                           children: [
-                            Text(
-                              "Upcoming events",
-                              style: TextStyle(
-                                  fontSize: 18, fontWeight: FontWeight.bold),
-                            ),
-                            Text("See all >",
-                                style: TextStyle(fontWeight: FontWeight.w500))
+                            Text("Open Notice Board",
+                                style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black)),
                           ],
                         ),
                       ),
-                      const SizedBox(height: 4),
-                      CarouselSlider(
-                        options: CarouselOptions(
-                          height: 150.0,
-                          enlargeFactor: 1.2,
-                          autoPlay: true,
-                          viewportFraction: 1,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 8.0, vertical: 16.0),
+                    child: Column(
+                      children: [
+                        const Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Upcoming events",
+                                style: TextStyle(
+                                    fontSize: 18, fontWeight: FontWeight.bold),
+                              ),
+                              Text("See all >",
+                                  style: TextStyle(fontWeight: FontWeight.w500))
+                            ],
+                          ),
                         ),
-                        items: [1, 2, 3, 4, 5].map((i) {
-                          return Builder(
-                            builder: (BuildContext context) {
-                              return const EventBanner();
-                            },
-                          );
-                        }).toList(),
-                      ),
-                      const SizedBox(height: 12),
-                      Column(
-                        children: [
-                          Padding(
+                        const SizedBox(height: 4),
+                        CarouselSlider(
+                          options: CarouselOptions(
+                            height: 150.0,
+                            enlargeFactor: 1.2,
+                            autoPlay: true,
+                            viewportFraction: 1,
+                          ),
+                          items: [1, 2, 3, 4, 5].map((i) {
+                            return Builder(
+                              builder: (BuildContext context) {
+                                return const EventBanner();
+                              },
+                            );
+                          }).toList(),
+                        ),
+                        const SizedBox(height: 12),
+                        Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  const Text(
+                                    "Study Material",
+                                    style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  GestureDetector(
+                                    onTap: () {
+                                      toPage(0);
+                                    },
+                                    child: const Text("See all >",
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.w500)),
+                                  )
+                                ],
+                              ),
+                            ),
+                            // const SizedBox(height: 4),
+                            SizedBox(
+                                height: 120,
+                                child: ListView(
+                                  scrollDirection: Axis.horizontal,
+                                  shrinkWrap: true,
+                                  padding: const EdgeInsets.all(8.0),
+                                  children: [
+                                    YearWiseTile(
+                                      year: "First",
+                                      desc:
+                                          "Study Material for phy and chem sem",
+                                      onClick: () {
+                                        Navigator.pushNamed(
+                                            context, "/firstyearstudy");
+                                      },
+                                    ),
+                                    YearWiseTile(
+                                      year: "Second",
+                                      desc:
+                                          "Study Material for all departments",
+                                      onClick: () {
+                                        Navigator.pushNamed(
+                                            context, "/firstyearstudy");
+                                      },
+                                    ),
+                                    YearWiseTile(
+                                      year: "Third",
+                                      desc:
+                                          "Study Material for phy and chem sem",
+                                      onClick: () {
+                                        Navigator.pushNamed(
+                                            context, "/firstyearstudy");
+                                      },
+                                    ),
+                                    YearWiseTile(
+                                      year: "Fourth",
+                                      desc:
+                                          "Study Material for all departments",
+                                      onClick: () {
+                                        Navigator.pushNamed(
+                                            context, "/firstyearstudy");
+                                      },
+                                    )
+                                  ],
+                                ))
+                          ],
+                        ),
+                        Container(
+                          margin: const EdgeInsets.all(16),
+                          decoration: GlobalStyles.blueShadowCardDeco,
+                          child: Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            child: Column(
                               children: [
-                                const Text(
-                                  "Study Material",
-                                  style: TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold),
+                                const Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.all(8.0),
+                                      child: Text(
+                                        "Know your department",
+                                        style: TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                    ),
+                                    // Container(
+                                    //   padding: const EdgeInsets.symmetric(
+                                    //       horizontal: 8.0, vertical: 4.0),
+                                    //   decoration: BoxDecoration(
+                                    //     color: Colors.grey.shade300,
+                                    //     borderRadius: BorderRadius.circular(10),
+                                    //   ),
+                                    //   child: const Text("my department",
+                                    //       style: TextStyle(fontSize: 10)),
+                                    // )
+                                  ],
                                 ),
-                                GestureDetector(
-                                  onTap: () {
-                                    toPage(0);
-                                  },
-                                  child: const Text("See all >",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w500)),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                SizedBox(
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(0),
+                                    child: GridView.count(
+                                        physics:
+                                            const NeverScrollableScrollPhysics(),
+                                        shrinkWrap: true,
+                                        crossAxisCount: 3,
+                                        childAspectRatio: 1.25,
+                                        children: <Widget>[
+                                          ...GlobalConstants.departments
+                                              .getRange(0, 5)
+                                              .map((department) =>
+                                                  DepartmentCard(
+                                                      department: department))
+                                              .toList(),
+                                          ViewMore(
+                                            onClick: () {
+                                              Navigator.of(context).push(
+                                                  MaterialPageRoute(
+                                                      builder: (context) {
+                                                return const KnowYourDepartment();
+                                              }));
+                                            },
+                                          )
+                                        ]),
+                                  ),
                                 )
                               ],
                             ),
                           ),
-                          // const SizedBox(height: 4),
-                          SizedBox(
-                              height: 120,
-                              child: ListView(
-                                scrollDirection: Axis.horizontal,
-                                shrinkWrap: true,
-                                padding: const EdgeInsets.all(8.0),
-                                children: [
-                                  YearWiseTile(
-                                    year: "First",
-                                    desc: "Study Material for phy and chem sem",
-                                    onClick: () {
-                                      Navigator.pushNamed(
-                                          context, "/firstyearstudy");
-                                    },
-                                  ),
-                                  YearWiseTile(
-                                    year: "Second",
-                                    desc: "Study Material for all departments",
-                                    onClick: () {
-                                      Navigator.pushNamed(
-                                          context, "/firstyearstudy");
-                                    },
-                                  ),
-                                  YearWiseTile(
-                                    year: "Third",
-                                    desc: "Study Material for phy and chem sem",
-                                    onClick: () {
-                                      Navigator.pushNamed(
-                                          context, "/firstyearstudy");
-                                    },
-                                  ),
-                                  YearWiseTile(
-                                    year: "Fourth",
-                                    desc: "Study Material for all departments",
-                                    onClick: () {
-                                      Navigator.pushNamed(
-                                          context, "/firstyearstudy");
-                                    },
-                                  )
-                                ],
-                              ))
-                        ],
-                      ),
-                      Container(
-                        margin: const EdgeInsets.all(16),
-                        decoration: GlobalStyles.blueShadowCardDeco,
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Column(
-                            children: [
-                              const Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.all(8.0),
-                                    child: Text(
-                                      "Know your department",
-                                      style: TextStyle(
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                  ),
-                                  // Container(
-                                  //   padding: const EdgeInsets.symmetric(
-                                  //       horizontal: 8.0, vertical: 4.0),
-                                  //   decoration: BoxDecoration(
-                                  //     color: Colors.grey.shade300,
-                                  //     borderRadius: BorderRadius.circular(10),
-                                  //   ),
-                                  //   child: const Text("my department",
-                                  //       style: TextStyle(fontSize: 10)),
-                                  // )
-                                ],
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              SizedBox(
-                                child: Padding(
-                                  padding: const EdgeInsets.all(0),
-                                  child: GridView.count(
-                                      physics:
-                                          const NeverScrollableScrollPhysics(),
-                                      shrinkWrap: true,
-                                      crossAxisCount: 3,
-                                      childAspectRatio: 1.25,
-                                      children: <Widget>[
-                                        ...GlobalConstants.derpartments
-                                            .getRange(0, 5)
-                                            .map((department) => DepartmentCard(
-                                                department: department))
-                                            .toList(),
-                                        ViewMore(
-                                          onClick: () {
-                                            Navigator.of(context).push(
-                                                MaterialPageRoute(
-                                                    builder: (context) {
-                                              return const KnowYourDepartment();
-                                            }));
-                                          },
-                                        )
-                                      ]),
-                                ),
-                              )
-                            ],
-                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

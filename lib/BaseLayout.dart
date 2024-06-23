@@ -52,16 +52,6 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Colors.black),
         actionsIconTheme: const IconThemeData(color: Colors.black),
-        actions: const [
-          Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Icon(
-              Icons.search,
-              color: Colors.black,
-              size: 28,
-            ),
-          ),
-        ],
         centerTitle: true,
         title: Text(
           titles[_selectedIndex],
@@ -79,7 +69,12 @@ class _HomePageState extends State<HomePage> {
         },
         children: views,
       ),
-      drawer: const SideBarView(),
+      drawer: SideBarView(
+        changeIndex: (int index) {
+          setIndex(index);
+          controller.jumpToPage(index);
+        },
+      ),
       bottomNavigationBar: BottomAppBar(
         notchMargin: 10.0,
         child: Padding(

@@ -43,83 +43,91 @@ class _SocietiesPageState extends State<SocietiesPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15.0),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'Societies',
+          style: TextStyle(color: Colors.black),
+        ),
       ),
-      color: const Color.fromARGB(255, 163, 234, 254),
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Image.network(
-              "https://cdn.icon-icons.com/icons2/1485/PNG/512/id-card_102342.png",
-              scale: 3.5,
-            ),
-          ),
-          const Text(
-            "Societies of KGP",
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-          ),
-          const Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Text(
-              "Select and search to know more about the Society",
-              style: TextStyle(
-                fontSize: 12,
+      body: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15.0),
+        ),
+        color: const Color.fromARGB(255, 163, 234, 254),
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Image.network(
+                "https://cdn.icon-icons.com/icons2/1485/PNG/512/id-card_102342.png",
+                scale: 3.5,
               ),
-              textAlign: TextAlign.center,
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              children: List.generate(
-                  150 ~/ 1,
-                  (index) => Expanded(
-                        child: Container(
-                          color: index % 2 == 0
-                              ? Colors.transparent
-                              : Colors.black,
-                          height: 2,
-                        ),
-                      )),
+            const Text(
+              "Societies of KGP",
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: SearchAnchor(
-                builder: (BuildContext context, SearchController controller) {
-              return SearchBar(
-                controller: controller,
-                padding: const MaterialStatePropertyAll<EdgeInsets>(
-                    EdgeInsets.symmetric(horizontal: 16.0)),
-                onTap: () {
-                  controller.openView();
-                },
-                onChanged: (_) {
-                  controller.openView();
-                },
-                leading: const Icon(Icons.search),
-              );
-            }, suggestionsBuilder:
-                    (BuildContext context, SearchController controller) {
-              return List<ListTile>.generate(GlobalConstants.societies.length,
-                  (int index) {
-                final String item = GlobalConstants.societies[index].name;
-                return ListTile(
-                  title: Text(item),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Text(
+                "Select and search to know more about the Society",
+                style: TextStyle(
+                  fontSize: 12,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: List.generate(
+                    150 ~/ 1,
+                    (index) => Expanded(
+                          child: Container(
+                            color: index % 2 == 0
+                                ? Colors.transparent
+                                : Colors.black,
+                            height: 2,
+                          ),
+                        )),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: SearchAnchor(
+                  builder: (BuildContext context, SearchController controller) {
+                return SearchBar(
+                  controller: controller,
+                  padding: const MaterialStatePropertyAll<EdgeInsets>(
+                      EdgeInsets.symmetric(horizontal: 16.0)),
                   onTap: () {
-                    setState(() {
-                      controller.closeView(item);
-                    });
+                    controller.openView();
                   },
+                  onChanged: (_) {
+                    controller.openView();
+                  },
+                  leading: const Icon(Icons.search),
                 );
-              });
-            }),
-          ),
-          ...getSocieties()
-        ],
+              }, suggestionsBuilder:
+                      (BuildContext context, SearchController controller) {
+                return List<ListTile>.generate(GlobalConstants.societies.length,
+                    (int index) {
+                  final String item = GlobalConstants.societies[index].name;
+                  return ListTile(
+                    title: Text(item),
+                    onTap: () {
+                      setState(() {
+                        controller.closeView(item);
+                      });
+                    },
+                  );
+                });
+              }),
+            ),
+            ...getSocieties()
+          ],
+        ),
       ),
     );
   }

@@ -11,14 +11,7 @@ class GlobalConstants {
         intro: 'Work for the academic welfare of students')
   ];
 
-  static List<Branch> branches = [
-    Branch(name: "Aerospace Engineering"),
-    Branch(name: "Agricultural and Food Processing"),
-    Branch(name: "Bio-Technology"),
-    Branch(name: "Chemistry"),
-  ];
-
-  static List<Department> derpartments = [
+  static List<Department> departments = [
     Department(
         name: "Computer Science and Engineering",
         image: "assets/images/image6.png",

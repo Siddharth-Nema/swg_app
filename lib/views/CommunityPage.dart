@@ -11,7 +11,7 @@ class CommunityPage extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(150.0),
+          preferredSize: const Size.fromHeight(152.0),
           child: Container(
             decoration:
                 const BoxDecoration(color: Color.fromRGBO(224, 237, 251, 1)),
