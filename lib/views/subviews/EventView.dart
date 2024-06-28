@@ -40,8 +40,8 @@ See you there!
     venue: "CIC LAB");
 
 class EventView extends StatelessWidget {
-  EventView({super.key, required this.event});
-  Event event;
+  const EventView({super.key, required this.event});
+  final Event event;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,8 +56,8 @@ class EventView extends StatelessWidget {
             children: [
               const Image(image: AssetImage('assets/images/event_poster.jpg')),
               Container(
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 111, 110, 110),
+                decoration: const BoxDecoration(
+                  color: Color.fromARGB(255, 111, 110, 110),
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),

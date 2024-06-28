@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
-import 'package:swg_flutter/BaseLayout.dart';
 import 'package:swg_flutter/LoginPage/InputField.dart';
 
 class LoginPage extends StatefulWidget {

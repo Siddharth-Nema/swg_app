@@ -227,7 +227,7 @@ class LandingPage extends StatelessWidget {
                                         crossAxisCount: 3,
                                         childAspectRatio: 1.25,
                                         children: <Widget>[
-                                          ...GlobalConstants.departments
+                                          ...GlobalConstants.derpartments
                                               .getRange(0, 5)
                                               .map((department) =>
                                                   DepartmentCard(
@@ -380,9 +380,9 @@ class ViewMore extends StatelessWidget {
 }
 
 class DepartmentCard extends StatelessWidget {
-  Department department;
+  final Department department;
 
-  DepartmentCard({super.key, required this.department});
+  const DepartmentCard({super.key, required this.department});
 
   @override
   Widget build(BuildContext context) {
@@ -390,7 +390,10 @@ class DepartmentCard extends StatelessWidget {
       // decoration: const BoxDecoration(color: Colors.amber),
       child: Column(
         children: [
-          Image.asset(department.image, scale: 1.5),
+          Image.asset(
+            department.image,
+            height: 50,
+          ),
           Text(
             department.code,
             style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
