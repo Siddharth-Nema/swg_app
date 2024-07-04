@@ -4,12 +4,12 @@ import 'package:swg_flutter/models/Department.dart';
 import 'package:swg_flutter/models/Society.dart';
 
 class GlobalConstants {
-  static List<Society> societies = [
-    Society(
-        name: 'Student Welfare Group',
-        icon: const AssetImage('assets/images/3.png'),
-        intro: 'Work for the academic welfare of students')
-  ];
+  // static List<Society> societies = [
+  //   Society(
+  //       name: 'Student Welfare Group',
+  //       icon: const AssetImage('assets/images/3.png'),
+  //       intro: 'Work for the academic welfare of students')
+  // ];
 
   static List<Branch> branches = [
     Branch(name: "Aerospace Engineering"),

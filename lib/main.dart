@@ -1,7 +1,9 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:swg_flutter/constants.dart';
+import 'package:swg_flutter/firebase_options.dart';
 import 'package:swg_flutter/views/CDC/CDCIntershipPage.dart';
 import 'package:swg_flutter/views/SocietiesPage.dart';
 import 'package:swg_flutter/views/StudyMaterial.dart';
@@ -15,7 +17,11 @@ import 'package:swg_flutter/views/subviews/YearWiseStudyMaterial/FirstYearSM.dar
 import 'package:swg_flutter/logoView.dart';
 import 'package:swg_flutter/views/subviews/ourTeamPage.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MainApp());
 }
 
