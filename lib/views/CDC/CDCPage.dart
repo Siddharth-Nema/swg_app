@@ -10,7 +10,7 @@ class CDCPage extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15.0),
       ),
-      color: const Color.fromARGB(255, 163, 234, 254),
+      color: GlobalStyles.kPrimaryBlueColor,
       child: SingleChildScrollView(
           child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 60.0, horizontal: 30.0),
@@ -55,7 +55,7 @@ class CDCPage extends StatelessWidget {
                 Navigator.of(context).pushNamed('/cdcinternshipblogs');
               },
               child: Container(
-                decoration: GlobalStyles.cardDeco,
+                decoration: GlobalStyles.blueShadowCardDeco,
                 margin: const EdgeInsets.all(12.0),
                 child: const SizedBox(
                   height: 75,
@@ -71,7 +71,7 @@ class CDCPage extends StatelessWidget {
               ),
             ),
             Container(
-              decoration: GlobalStyles.cardDeco,
+              decoration: GlobalStyles.blueShadowCardDeco,
               margin: const EdgeInsets.all(12.0),
               child: const SizedBox(
                 height: 75,

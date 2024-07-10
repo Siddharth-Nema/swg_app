@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:swg_flutter/constants.dart';
 import 'package:swg_flutter/models/TeamMember.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class OurTeamPage extends StatefulWidget {
   @override
@@ -25,7 +26,7 @@ class _OurTeamPageState extends State<OurTeamPage>
   }
 
   List<String> sessions = ['2021-22', '2022-23', '2023-24', '2024-25'];
-  String selectedSession = '2021-22';
+  String selectedSession = '2023-24';
 
   @override
   Widget build(BuildContext context) {
@@ -48,11 +49,6 @@ class _OurTeamPageState extends State<OurTeamPage>
                     TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 4),
-              // Text(
-              //   'Session : 2024-25',
-              //   style: TextStyle(color: Colors.black54, fontSize: 14),
-              // ),
-              //dropdown
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
@@ -130,18 +126,54 @@ class _OurTeamPageState extends State<OurTeamPage>
           ),
         ),
       ),
-      body: TabBarView(
-        controller: _tabController,
-        children: [
-          TeamGridView(),
-          const Center(child: Text('Heads')),
-        ],
+      body: FutureBuilder(
+        future: TeamMember.fetchTeamMembers(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          } else {
+            if (snapshot.hasError) {
+              return Center(
+                child: Text('Error: ${snapshot.error}'),
+              );
+            } else {
+              List<TeamMember> teamMembers = snapshot.data as List<TeamMember>;
+              return TabBarView(
+                controller: _tabController,
+                children: [
+                  TeamGridView(
+                    teamMembers: teamMembers
+                        .where((element) =>
+                            element.smAcademicSession == selectedSession)
+                        .toList(),
+                  ),
+                  TeamGridView(
+                    teamMembers: teamMembers
+                        .where((element) =>
+                            element.headAcademicSession == selectedSession)
+                        .toList(),
+                  ),
+                  // const Center(child: Text('Heads')),
+                ],
+              );
+            }
+          }
+        },
       ),
     );
   }
 }
 
 class TeamGridView extends StatelessWidget {
+  List<TeamMember> teamMembers;
+
+  TeamGridView({
+    super.key,
+    required this.teamMembers,
+  });
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -151,19 +183,16 @@ class TeamGridView extends StatelessWidget {
           color: GlobalStyles.kPrimaryBlueColor,
           borderRadius:
               const BorderRadius.vertical(bottom: Radius.circular(24))),
-      child: GridView.builder(
-        padding: const EdgeInsets.all(8.0),
+      child: GridView(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          childAspectRatio: 0.7,
+          childAspectRatio: 0.65,
           mainAxisSpacing: 8.0,
           crossAxisSpacing: 8.0,
         ),
-        itemCount: teamMembers.length,
-        itemBuilder: (context, index) {
-          final member = teamMembers[index];
+        children: teamMembers.map((member) {
           return TeamCard(member: member);
-        },
+        }).toList(),
       ),
     );
   }
@@ -186,11 +215,22 @@ class TeamCard extends StatelessWidget {
               ClipRRect(
                 borderRadius:
                     const BorderRadius.vertical(top: Radius.circular(15)),
-                child: Image.network(
-                  member.imageUrl,
+                child: Container(
                   height: 150,
                   width: double.infinity,
-                  fit: BoxFit.cover,
+                  decoration: const BoxDecoration(
+                    color: Colors.black,
+                  ),
+                  child: Image.network(
+                    "https://drive.usercontent.google.com/download?id=${member.imageUrl.split("id=")[1]}&export=view&authuser=0",
+                    errorBuilder: (context, error, stackTrace) => const Icon(
+                      Icons.error,
+                      color: Colors.red,
+                    ),
+                    height: 150,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
               Positioned(
@@ -223,6 +263,7 @@ class TeamCard extends StatelessWidget {
                 children: [
                   Text(
                     member.name,
+                    maxLines: 1,
                     style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
@@ -231,7 +272,7 @@ class TeamCard extends StatelessWidget {
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    member.role,
+                    member.rollNo,
                     style: const TextStyle(
                       fontSize: 14,
                       color: Colors.white,
@@ -240,17 +281,45 @@ class TeamCard extends StatelessWidget {
                   const SizedBox(height: 8),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: member.socialLinks.map((link) {
-                      return Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                        child: Icon(
-                          _getIcon(link),
-                          size: 20,
-                          color: Colors.white,
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          // launch(member.fbLink);
+                          launchUrl(Uri.parse(member.instaUrl));
+                        },
+                        child: Image.asset(
+                          'assets/icons/insta.png',
+                          height: 24,
+                          width: 24,
                         ),
-                      );
-                    }).toList(),
+                      ),
+                      SizedBox(width: 8),
+                      InkWell(
+                        onTap: () {
+                          // launch(member.fbLink);
+                          launchUrl(Uri.parse(member.facebookUrl));
+                        },
+                        child: Image.asset(
+                          'assets/icons/facebook.png',
+                          height: 24,
+                          width: 24,
+                        ),
+                      ),
+                      SizedBox(width: 8),
+                      InkWell(
+                        onTap: () {
+                          // launch(member.fbLink);
+                          launchUrl(Uri.parse(member.linkedinUrl));
+                        },
+                        child: Image.asset(
+                          'assets/icons/linked.png',
+                          height: 24,
+                          width: 24,
+                        ),
+                      ),
+                    ],
                   ),
+                  const SizedBox(height: 8),
                 ],
               ),
             ),

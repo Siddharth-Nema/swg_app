@@ -1,9 +1,13 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:swg_flutter/constants.dart';
 import 'package:swg_flutter/models/Department.dart';
+import 'package:swg_flutter/models/Society.dart';
+import 'package:swg_flutter/views/SocietiesPage.dart';
 import 'package:swg_flutter/views/subviews/KnowYourDepartment.dart';
 import 'package:swg_flutter/widgets/StudyMaterial/year_wise_tab.dart';
+import 'package:url_launcher/url_launcher.dart';
 // ...
 
 class LandingPage extends StatelessWidget {
@@ -30,24 +34,15 @@ class LandingPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // const Padding(
-                  //   padding: EdgeInsets.fromLTRB(16, 16, 16, 0),
-                  //   child: Text(
-                  //     "Hello Anish!",
-                  //     style: TextStyle(
-                  //       fontSize: 20,
-                  //       fontWeight: FontWeight.bold,
-                  //     ),
-                  //     textAlign: TextAlign.left,
-                  //   ),
-                  // ),
                   const SizedBox(
                     height: 10,
                   ),
                   Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: InkWell(
-                      onTap: () => Navigator.pushNamed(context, "/noticeboard"),
+                      onTap: () {
+                        Navigator.pushNamed(context, "/noticeboard");
+                      },
                       child: Container(
                         padding: const EdgeInsets.all(16),
                         decoration: BoxDecoration(
@@ -182,77 +177,447 @@ class LandingPage extends StatelessWidget {
                                 ))
                           ],
                         ),
-                        Container(
-                          margin: const EdgeInsets.all(16),
-                          decoration: GlobalStyles.blueShadowCardDeco,
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-                                const Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsets.all(8.0),
-                                      child: Text(
-                                        "Know your department",
-                                        style: TextStyle(
-                                            fontSize: 18,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                    ),
-                                    // Container(
-                                    //   padding: const EdgeInsets.symmetric(
-                                    //       horizontal: 8.0, vertical: 4.0),
-                                    //   decoration: BoxDecoration(
-                                    //     color: Colors.grey.shade300,
-                                    //     borderRadius: BorderRadius.circular(10),
-                                    //   ),
-                                    //   child: const Text("my department",
-                                    //       style: TextStyle(fontSize: 10)),
-                                    // )
-                                  ],
-                                ),
-                                const SizedBox(
-                                  height: 10,
-                                ),
-                                SizedBox(
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(0),
-                                    child: GridView.count(
-                                        physics:
-                                            const NeverScrollableScrollPhysics(),
-                                        shrinkWrap: true,
-                                        crossAxisCount: 3,
-                                        childAspectRatio: 1.25,
-                                        children: <Widget>[
-                                          ...GlobalConstants.derpartments
-                                              .getRange(0, 5)
-                                              .map((department) =>
-                                                  DepartmentCard(
-                                                      department: department))
-                                              .toList(),
-                                          ViewMore(
-                                            onClick: () {
-                                              Navigator.of(context).push(
-                                                  MaterialPageRoute(
-                                                      builder: (context) {
-                                                return const KnowYourDepartment();
-                                              }));
-                                            },
-                                          )
-                                        ]),
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
+                        _buildDepartments(context),
+                        _buildSWGInitiatives(),
+                        _buildSocities(context),
+                        _buildFundaeDocs(),
+                        _buildBenifitsOfInstiId(),
                       ],
                     ),
                   ),
                 ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Container _buildDepartments(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.all(16),
+      decoration: GlobalStyles.blueShadowCardDeco,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text(
+                    "Know your department",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            SizedBox(
+              child: Padding(
+                padding: const EdgeInsets.all(0),
+                child: GridView.count(
+                    physics: const NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    crossAxisCount: 3,
+                    childAspectRatio: 1.25,
+                    children: <Widget>[
+                      ...GlobalConstants.derpartments
+                          .getRange(0, 5)
+                          .map((department) =>
+                              DepartmentCard(department: department))
+                          .toList(),
+                      ViewMore(
+                        onClick: () {
+                          Navigator.of(context)
+                              .push(MaterialPageRoute(builder: (context) {
+                            return const KnowYourDepartment();
+                          }));
+                        },
+                      )
+                    ]),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Container _buildSocities(BuildContext context) {
+    Future<String> fetchImage(String image_name) async {
+      try {
+        final ref =
+            FirebaseStorage.instance.ref().child("soc-logos/$image_name");
+        String url = await ref.getDownloadURL();
+        print(url);
+        return url;
+      } catch (e) {
+        print('Error fetching image: $e');
+        return '';
+      }
+    }
+
+    return Container(
+      margin: const EdgeInsets.all(16),
+      decoration: GlobalStyles.blueShadowCardDeco,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text(
+                    "Socities",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            SizedBox(
+              child: Padding(
+                padding: const EdgeInsets.all(0),
+                child: GridView.count(
+                    physics: const NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    crossAxisCount: 3,
+                    childAspectRatio: 1,
+                    children: <Widget>[
+                      // ...GlobalConstants.derpartments
+                      //     .getRange(0, 5)
+                      //     .map((department) =>
+                      //         DepartmentCard(department: department))
+                      //     .toList(),
+                      ...socsJson
+                          .getRange(0, 5)
+                          .map((society) => Society.fromJson(society))
+                          .map(
+                            (e) => Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Container(
+                                  height: 50,
+                                  width: 50,
+                                  child: FutureBuilder(
+                                    future: fetchImage(e.image_name),
+                                    builder: (context, snapshot) {
+                                      if (snapshot.connectionState ==
+                                          ConnectionState.done) {
+                                        if (snapshot.hasError) {
+                                          return const Icon(Icons.error);
+                                        }
+                                        if (snapshot.hasData) {
+                                          if (snapshot.data == '') {
+                                            return const Icon(Icons.error);
+                                          }
+                                          return Image.network(
+                                            snapshot.data!,
+                                            height: 40,
+                                            width: 40,
+                                          );
+                                        }
+                                      }
+                                      return const CircularProgressIndicator();
+                                    },
+                                  ),
+                                ),
+                                Text(
+                                  e.name,
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                  textAlign: TextAlign.center,
+                                  style: const TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold),
+                                )
+                              ],
+                            ),
+                          ),
+                      ViewMore(
+                        onClick: () {
+                          Navigator.of(context)
+                              .push(MaterialPageRoute(builder: (context) {
+                            return const SocietiesPage();
+                          }));
+                        },
+                      )
+                    ]),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Container _buildFundaeDocs() {
+    final fundaeDocs = [
+      {
+        "image": 'assets/images/fundae-docs/book.png',
+        "title": "Subject-wise fundae",
+        "url":
+            "https://drive.google.com/file/d/1dtkaV3P4wKk_5WWChMyHgMd0XPeiF3v1/view?usp=drivesdk"
+      },
+      {
+        "image": 'assets/images/fundae-docs/puzzle 1.png',
+        "title": "General fundae",
+        "url":
+            "https://drive.google.com/file/d/1PXfo1QsrKUNlbnc4ZN8xiuEwt6fScF9q/view?usp=drivesdk"
+      },
+      {
+        "image": 'assets/images/fundae-docs/test 1.png',
+        "title": "Examania",
+        "url":
+            "https://drive.google.com/file/d/13pB45by4XcxgSB6ADAZwDNKf2KP2yMCW/view?usp=drivesdk"
+      },
+      {
+        "image": 'assets/images/fundae-docs/student 1.png',
+        "title": "CDC Resources",
+        "url":
+            "https://drive.google.com/file/d/1SlOowUrdyLSR7hghkZbIafkWgQGnjX4y/view?usp=drivesdk"
+      },
+    ];
+    return Container(
+      margin: const EdgeInsets.all(16),
+      decoration: GlobalStyles.blueShadowCardDeco,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text(
+                    "Fundae Docs",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            SizedBox(
+              child: Padding(
+                padding: const EdgeInsets.all(0),
+                child: GridView.count(
+                  physics: const NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  crossAxisCount: 2,
+                  childAspectRatio: 1.5,
+                  // crossAxisSpacing: 10,
+                  mainAxisSpacing: 10,
+                  children: <Widget>[
+                    for (var doc in fundaeDocs)
+                      GestureDetector(
+                        onTap: () {
+                          launchUrl(Uri.parse(doc["url"]!));
+                        },
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Image.asset(
+                              doc["image"]!,
+                              height: 50,
+                            ),
+                            const SizedBox(height: 10),
+                            Text(
+                              doc["title"]!,
+                              textAlign: TextAlign.center,
+                              style: const TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.bold),
+                            )
+                          ],
+                        ),
+                      ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildSWGInitiatives() {
+    final initiatives = [
+      "AKGP.png",
+      "APP.png",
+      "CT.png",
+      "EXAM.png",
+      "OCT.png",
+      "RGW.png",
+      "UPSCT.png",
+      "AOST.png",
+      "COS.png",
+      "DEPCT.png",
+      "FORESIGHT.png",
+      "PDS.png",
+      "SMP.png"
+    ];
+
+    return Column(
+      children: [
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 2.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "SWG Initiatives & Events",
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+            ],
+          ),
+        ),
+        CarouselSlider(
+          options: CarouselOptions(
+            height: 200.0,
+            enlargeFactor: 1.2,
+            autoPlay: true,
+            viewportFraction: 1,
+          ),
+          items: initiatives.map((i) {
+            return Builder(
+              builder: (BuildContext context) {
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    decoration: GlobalStyles.blueShadowCardDeco,
+                    clipBehavior: Clip.antiAlias,
+                    child: Image.asset(
+                      fit: BoxFit.contain,
+                      'assets/images/swg-events/$i',
+                      height: 150,
+                    ),
+                  ),
+                );
+              },
+            );
+          }).toList(),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildBenifitsOfInstiId() {
+    final benifits = [
+      {
+        "image": 'AWS.png',
+        "title": "AWS",
+        "url":
+            "https://medium.com/@swgiitkgp/amazon-web-services-through-institute-id-1a30fca0d1d8"
+      },
+      {
+        "image": 'grammarly.png',
+        "title": "Grammarly Premium",
+        "url":
+            "https://medium.com/@swgiitkgp/grammarly-premium-through-institute-id-74edb75f23fb"
+      },
+      {
+        "image": 'Mathworks.png',
+        "title": "Mathworks",
+        "url":
+            "https://medium.com/@swgiitkgp/mathworks-products-through-institute-id-151b9cc42c28"
+      },
+      {
+        "image": 'IntelliJ idea.png',
+        "title": "IntelliJ IDE",
+        "url":
+            "https://medium.com/@swgiitkgp/intellij-ides-through-institute-id-d56acf3513d8"
+      },
+      {
+        "image": 'Autodesk.png',
+        "title": "AutoDesk",
+        "url":
+            "https://medium.com/@swgiitkgp/autodesk-products-through-institute-id-27bd9226ccb4"
+      },
+      {
+        "image": 'github.png',
+        "title": "Github",
+        "url":
+            "https://medium.com/@swgiitkgp/github-student-developer-pack-and-pro-account-through-institute-id-a0fb56613410"
+      },
+      {
+        "image": 'turnitin.png',
+        "title": "TURNITIN",
+        "url":
+            "https://medium.com/@swgiitkgp/turnitin-license-through-institute-id-f40c9231c325"
+      },
+    ];
+
+    return Container(
+      margin: const EdgeInsets.all(16),
+      decoration: GlobalStyles.blueShadowCardDeco,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text(
+                    "Benifits of Institute ID",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            SizedBox(
+              child: Padding(
+                padding: const EdgeInsets.all(0),
+                child: GridView.count(
+                  physics: const NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  crossAxisCount: 4,
+                  childAspectRatio: 1,
+                  // crossAxisSpacing: 10,
+                  mainAxisSpacing: 10,
+                  children: <Widget>[
+                    for (var doc in benifits)
+                      GestureDetector(
+                        onTap: () {
+                          launchUrl(Uri.parse(doc["url"]!));
+                        },
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Image.asset(
+                              "assets/images/insti-id-benifits/${doc["image"]!}",
+                              height: 36,
+                            ),
+                            const SizedBox(height: 10),
+                            Text(
+                              doc["title"]!,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              textAlign: TextAlign.center,
+                              style: const TextStyle(
+                                  fontSize: 14, fontWeight: FontWeight.w500),
+                            )
+                          ],
+                        ),
+                      ),
+                  ],
+                ),
               ),
             ),
           ],

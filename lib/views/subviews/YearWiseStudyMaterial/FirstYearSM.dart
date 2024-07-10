@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:swg_flutter/constants.dart';
 import 'package:swg_flutter/widgets/StudyMaterial/DepressedButton.dart';
 
 class FirstYearSM extends StatelessWidget {
@@ -43,16 +44,17 @@ class FirstYearSM extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15.0),
         ),
-        color: const Color.fromARGB(255, 163, 234, 254),
+        color: GlobalStyles.kPrimaryBlueColor,
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 32),
           child: Column(
             children: [
               Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: Image.network(
-                  "https://cdn-icons-png.flaticon.com/512/2847/2847502.png",
-                  scale: 5,
+                child: Image.asset(
+                  // "https://cdn-icons-png.flaticon.com/512/2847/2847502.png",
+                  "assets/images/books.png",
+                  height: 100,
                 ),
               ),
               const Text(
