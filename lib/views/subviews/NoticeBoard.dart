@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:swg_flutter/widgets/NoticeBoard/events_view.dart';
 import 'package:swg_flutter/widgets/NoticeBoard/notices.dart';
 
 class NoticeBoard extends StatefulWidget {
@@ -31,12 +32,7 @@ class _NoticeBoardState extends State<NoticeBoard> {
             ),
           ),
           body: TabBarView(
-            children: [
-              NoticesView(),
-              const Center(
-                child: Text('Events'),
-              ),
-            ],
+            children: [NoticesView(), EventsView()],
           ),
         ));
   }
