@@ -32,11 +32,18 @@ class SideBarView extends StatelessWidget {
                       children: [
                         Positioned(
                           child: Container(
-                            height: 100,
-                            width: 100,
+                            width: 110,
+                            height: 110,
                             decoration: BoxDecoration(
-                              color: Colors.blue,
-                              borderRadius: BorderRadius.circular(100),
+                              image: const DecorationImage(
+                                  image: AssetImage('assets/images/1.png'),
+                                  fit: BoxFit.cover),
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                width: 5,
+                                color: Colors.white,
+                              ),
+                              color: Colors.black,
                             ),
                           ),
                         ),
@@ -61,12 +68,15 @@ class SideBarView extends StatelessWidget {
                     ),
                     const SizedBox(height: 10),
                     const Text(
-                      "Username",
+                      "KGPIAN",
                       style:
                           TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
                     ),
                     const SizedBox(height: 10),
-                    const InkWell(
+                    InkWell(
+                      onTap: () {
+                        Navigator.of(context).pushNamed('/profile');
+                      },
                       child: Text(
                         "View Profile",
                         style: TextStyle(
@@ -108,9 +118,6 @@ class SideBarView extends StatelessWidget {
                       title: "Featured Blogs",
                       route: '/cdcinternshipblogs',
                     ),
-                    const Options(
-                        title: "Benifits of Insti-ID",
-                        route: '/benefitsofinsti'),
                     const Options(title: "Our Team", route: '/ourteam'),
                   ],
                 ),

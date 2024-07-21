@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:swg_flutter/constants.dart';
 import 'package:swg_flutter/models/Department.dart';
 import 'package:swg_flutter/models/Society.dart';
@@ -45,15 +46,7 @@ class LandingPage extends StatelessWidget {
                       },
                       child: Container(
                         padding: const EdgeInsets.all(16),
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(10),
-                            boxShadow: [
-                              BoxShadow(
-                                  color: Colors.grey.shade300,
-                                  blurRadius: 10,
-                                  spreadRadius: 1)
-                            ]),
+                        decoration: GlobalStyles.blueShadowCardDeco,
                         width: double.infinity,
                         child: const Column(
                           children: [
@@ -72,18 +65,25 @@ class LandingPage extends StatelessWidget {
                         horizontal: 8.0, vertical: 16.0),
                     child: Column(
                       children: [
-                        const Padding(
-                          padding: EdgeInsets.all(8.0),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
+                              const Text(
                                 "Upcoming events",
                                 style: TextStyle(
                                     fontSize: 18, fontWeight: FontWeight.bold),
                               ),
-                              Text("See all >",
-                                  style: TextStyle(fontWeight: FontWeight.w500))
+                              InkWell(
+                                onTap: () {
+                                  // toPage(1);
+                                  Navigator.pushNamed(context, "/noticeboard");
+                                },
+                                child: const Text("See all >",
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.w500)),
+                              )
                             ],
                           ),
                         ),
@@ -120,7 +120,7 @@ class LandingPage extends StatelessWidget {
                                   ),
                                   GestureDetector(
                                     onTap: () {
-                                      toPage(0);
+                                      toPage(1);
                                     },
                                     child: const Text("See all >",
                                         style: TextStyle(
@@ -179,6 +179,8 @@ class LandingPage extends StatelessWidget {
                         ),
                         _buildDepartments(context),
                         _buildSWGInitiatives(),
+                        const SizedBox(height: 8),
+                        _buildKnowYourMentor(context),
                         _buildSocities(context),
                         _buildFundaeDocs(),
                         _buildBenifitsOfInstiId(),
@@ -191,6 +193,35 @@ class LandingPage extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+
+  Widget _buildKnowYourMentor(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+      child: InkWell(
+          onTap: () => Navigator.pushNamed(context, "/mentor-mentee"),
+          child: Container(
+            padding: const EdgeInsets.all(16),
+            decoration: GlobalStyles.blueShadowCardDeco,
+            width: double.infinity,
+            child: Row(
+              children: [
+                Image.asset(
+                  'assets/images/mentor-mentee.png',
+                  height: 36,
+                ),
+                const SizedBox(width: 8),
+                const Text("Know Your Mentor",
+                    style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black)),
+                const Spacer(),
+                const Icon(Icons.arrow_forward_ios),
+              ],
+            ),
+          )),
     );
   }
 
@@ -226,7 +257,7 @@ class LandingPage extends StatelessWidget {
                     crossAxisCount: 3,
                     childAspectRatio: 1.25,
                     children: <Widget>[
-                      ...GlobalConstants.derpartments
+                      ...GlobalConstants.departments
                           .getRange(0, 5)
                           .map((department) =>
                               DepartmentCard(department: department))

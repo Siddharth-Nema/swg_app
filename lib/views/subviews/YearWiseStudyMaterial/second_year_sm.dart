@@ -3,14 +3,17 @@ import 'package:swg_flutter/constants.dart';
 import 'package:swg_flutter/models/Department.dart';
 import 'package:swg_flutter/widgets/KnowYourDepartment/department_tile.dart';
 
-class KnowYourDepartment extends StatelessWidget {
-  const KnowYourDepartment({super.key});
+class SecondYearSM extends StatelessWidget {
+  const SecondYearSM({super.key});
 
   List<DepartmentTile> getDepartments() {
     List<DepartmentTile> deps = [];
 
     for (Department branch in GlobalConstants.departments) {
-      deps.add(DepartmentTile(branch: branch));
+      deps.add(DepartmentTile(
+        branch: branch,
+        forStudyMaterial: true,
+      ));
     }
     return deps;
   }
@@ -20,7 +23,7 @@ class KnowYourDepartment extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Know Your Department',
+          'Second Year Study Material',
           style: TextStyle(color: Colors.black),
         ),
       ),
@@ -36,21 +39,22 @@ class KnowYourDepartment extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Image.asset(
-                  "assets/images/KnowYourDep.png",
-                  scale: 4,
+                  // "https://cdn-icons-png.flaticon.com/512/2847/2847502.png",
+                  "assets/images/books.png",
+                  height: 100,
                 ),
               ),
               const Text(
-                "Know your \n Department",
+                "Study Material \n for Second Year",
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
               const Padding(
-                padding: EdgeInsets.all(16.0),
+                padding: EdgeInsets.all(8.0),
                 child: Text(
-                  "Dive in to know more about your department in the words of final and pre final year students",
+                  "All the material you need a night before exam compiled in one place.",
                   style: TextStyle(
-                    fontSize: 14,
+                    fontSize: 12,
                   ),
                   textAlign: TextAlign.center,
                 ),

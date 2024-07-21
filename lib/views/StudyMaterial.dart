@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:swg_flutter/constants.dart';
+import 'package:swg_flutter/views/subviews/YearWiseStudyMaterial/second_year_sm.dart';
 import 'package:swg_flutter/widgets/StudyMaterial/year_wise_tab.dart';
 
 class StudyMaterial extends StatelessWidget {
@@ -70,7 +71,11 @@ class StudyMaterial extends StatelessWidget {
                   year: "Second",
                   desc: "Study Material for all departments",
                   onClick: () {
-                    Navigator.pushNamed(context, "/firstyearstudy");
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const SecondYearSM(),
+                        ));
                   },
                 ),
                 YearWiseTile(

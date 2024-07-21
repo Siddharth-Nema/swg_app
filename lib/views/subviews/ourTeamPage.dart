@@ -293,7 +293,7 @@ class TeamCard extends StatelessWidget {
                           width: 24,
                         ),
                       ),
-                      SizedBox(width: 8),
+                      const SizedBox(width: 8),
                       InkWell(
                         onTap: () {
                           // launch(member.fbLink);
@@ -305,7 +305,7 @@ class TeamCard extends StatelessWidget {
                           width: 24,
                         ),
                       ),
-                      SizedBox(width: 8),
+                      const SizedBox(width: 8),
                       InkWell(
                         onTap: () {
                           // launch(member.fbLink);

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:swg_flutter/constants.dart';
 import 'package:swg_flutter/widgets/StudyMaterial/DepressedButton.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class FirstYearSM extends StatelessWidget {
   const FirstYearSM({super.key});
@@ -20,18 +21,6 @@ class FirstYearSM extends StatelessWidget {
             onPressed: () {
               Navigator.of(context).pop();
             }),
-        actions: const [
-          Icon(
-            Icons.search,
-            color: Colors.black,
-            size: 28,
-          ),
-          Icon(
-            Icons.more_vert,
-            color: Colors.black,
-            size: 28,
-          ),
-        ],
         centerTitle: true,
         title: const Text(
           "Study Material",
@@ -87,9 +76,24 @@ class FirstYearSM extends StatelessWidget {
                           )),
                 ),
               ),
-              const DepressedButton(text: 'Study Material'),
-              const DepressedButton(text: 'Previous Year Papers'),
-              const DepressedButton(text: 'NPTEL Channel')
+              DepressedButton(
+                  text: 'Study Material',
+                  onPressed: () {
+                    launchUrl(Uri.parse(
+                        "https://drive.google.com/drive/folders/1cZjU_l2NUIuxnRofN30DqavQZ1tHr4Wy"));
+                  }),
+              // const DepressedButton(text: 'Chemistry Sem'),
+              DepressedButton(
+                  text: 'Previous Year Papers',
+                  onPressed: () {
+                    launchUrl(Uri.parse(
+                        "https://drive.google.com/drive/folders/14TZrcnxgnkd3ctlNt3eNyly0F3L5GyUs"));
+                  }),
+              DepressedButton(
+                  text: 'NPTEL Channel',
+                  onPressed: () {
+                    launchUrl(Uri.parse("https://www.youtube.com/@iit"));
+                  })
             ],
           ),
         ),

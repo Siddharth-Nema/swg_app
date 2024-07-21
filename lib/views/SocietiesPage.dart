@@ -31,17 +31,7 @@ class _SocietiesPageState extends State<SocietiesPage> {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Row(children: [
-            // Image(
-            //   image ?? const AssetImage('/assets/images/3.png'),
-            //   height: 40,
-            //   width: 40,
-            // ),
-            // Image.network(
-            //   "gs://swg-app-ddf90.appspot.com/soc-logos/${society.image_name}",
-            //   height: 40,
-            //   width: 40,
-            // ),
-            Container(
+            SizedBox(
               height: 40,
               width: 40,
               child: FutureBuilder(

@@ -3,19 +3,21 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:swg_flutter/BaseLayout.dart';
+import 'package:swg_flutter/LoginPage/LoginPage.dart';
 import 'package:swg_flutter/constants.dart';
 import 'package:swg_flutter/firebase_options.dart';
+import 'package:swg_flutter/logoView.dart';
 import 'package:swg_flutter/views/CDC/CDCIntershipPage.dart';
+import 'package:swg_flutter/views/ProfileView.dart';
 import 'package:swg_flutter/views/SocietiesPage.dart';
 import 'package:swg_flutter/views/StudyMaterial.dart';
 import 'package:swg_flutter/views/subviews/BenifitsOfInstiIdPage.dart';
 import 'package:swg_flutter/views/subviews/EventView.dart';
-import 'package:swg_flutter/BaseLayout.dart';
-import 'package:swg_flutter/LoginPage/LoginPage.dart';
 import 'package:swg_flutter/views/subviews/KnowYourDepartment.dart';
 import 'package:swg_flutter/views/subviews/NoticeBoard.dart';
-import 'package:swg_flutter/views/subviews/YearWiseStudyMaterial/FirstYearSM.dart';
-import 'package:swg_flutter/logoView.dart';
+import 'package:swg_flutter/views/subviews/YearWiseStudyMaterial/FirstYearSM%20copy.dart';
+import 'package:swg_flutter/views/subviews/mentor_mentee_page.dart';
 import 'package:swg_flutter/views/subviews/ourTeamPage.dart';
 
 void main() async {
@@ -36,6 +38,37 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
+        primaryColor: GlobalStyles.kPrimaryBlueColor,
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(Colors.white),
+            foregroundColor: MaterialStateProperty.all(Colors.black),
+          ),
+        ),
+        textButtonTheme: TextButtonThemeData(
+          style: ButtonStyle(
+            foregroundColor: MaterialStateProperty.all(Colors.black),
+          ),
+        ),
+        inputDecorationTheme: InputDecorationTheme(
+          filled: true,
+          fillColor: Colors.white,
+          labelStyle: const TextStyle(color: Colors.black),
+          contentPadding:
+              const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: const BorderSide(color: Colors.black),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: const BorderSide(color: Colors.black),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: const BorderSide(color: Colors.black),
+          ),
+        ),
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.white,
           elevation: 0,
@@ -73,11 +106,18 @@ class MainApp extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: '/login',
+      // initialRoute: '/',
+      initialRoute: '/mentor-mentee',
       routes: {
         'logo': (context) => const LogoView(),
         '/login': (context) => const LoginPage(),
         '/': (context) => const HomePage(),
+        '/profile': (context) => Scaffold(
+              appBar: AppBar(
+                title: const Text("Profile"),
+              ),
+              body: const ProfileView(),
+            ),
         '/cdcinternshipblogs': (context) => const CDCIntershipPage(),
         '/event-view': (context) => EventView(event: event),
         '/firstyearstudy': (context) => const FirstYearSM(),
@@ -87,6 +127,7 @@ class MainApp extends StatelessWidget {
         '/studymaterial': (context) => const StudyMaterial(),
         '/noticeboard': (context) => const NoticeBoard(),
         '/ourteam': (context) => OurTeamPage(),
+        '/mentor-mentee': (context) => const MentorMenteePage(),
       },
     );
   }

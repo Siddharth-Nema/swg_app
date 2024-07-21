@@ -2,7 +2,13 @@ import 'package:flutter/material.dart';
 
 class DepressedButton extends StatelessWidget {
   final String text;
-  const DepressedButton({super.key, required this.text});
+  Function onPressed;
+  DepressedButton(
+      {super.key, required this.text, this.onPressed = _defaultOnPressed});
+
+  static void _defaultOnPressed() {
+    // Default implementation for onPressed
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +27,9 @@ class DepressedButton extends StatelessWidget {
             backgroundColor: const MaterialStatePropertyAll(
                 Color.fromARGB(255, 116, 225, 255)),
             padding: const MaterialStatePropertyAll(EdgeInsets.all(12))),
-        onPressed: () {},
+        onPressed: () {
+          onPressed();
+        },
         child: Text(
           text,
           style: const TextStyle(color: Colors.black, fontSize: 20),

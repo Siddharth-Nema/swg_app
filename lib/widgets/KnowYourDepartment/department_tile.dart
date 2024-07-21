@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:swg_flutter/constants.dart';
 import 'package:swg_flutter/models/Department.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class DepartmentTile extends StatelessWidget {
   final Department branch;
-  const DepartmentTile({super.key, required this.branch});
+  bool forStudyMaterial = false;
+  DepartmentTile({
+    super.key,
+    required this.branch,
+    this.forStudyMaterial = false,
+  });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        final Uri uri = Uri.parse(branch.mediumArticleLink ?? '');
+        final Uri uri = forStudyMaterial
+            ? Uri.parse(branch.studyMaterialLink ?? '')
+            : Uri.parse(branch.mediumArticleLink ?? '');
         launchUrl(uri);
       },
       child: Card(

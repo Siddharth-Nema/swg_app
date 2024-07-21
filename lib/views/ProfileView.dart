@@ -45,10 +45,10 @@ class ProfileView extends StatelessWidget {
             height: 45,
           ),
           const Text(
-            "Siddharth Nema",
+            "KGPIAN",
             style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
           ),
-          const Text("23MI10045"),
+          const Text("23AE1001"),
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
             padding: const EdgeInsets.symmetric(vertical: 8.0),
@@ -58,12 +58,12 @@ class ProfileView extends StatelessWidget {
             ),
             child: const Column(children: [
               ColumnTile(heading: "Mentor", desc: "Satyaki Chakraborty"),
-              ColumnTile(
-                  heading: "Department",
-                  desc: "Department of Civil Engineering"),
-              ColumnTile(heading: "Facad", desc: "Prof. Bharab Maitra"),
-              ColumnTile(
-                  heading: "Hall Warden", desc: "Prof. Sanjeeb Kumar Patra"),
+              // ColumnTile(
+              // heading: "Department",
+              // desc: "Department of Civil Engineering"),
+              // ColumnTile(heading: "Facad", desc: "Prof. Bharab Maitra"),
+              // ColumnTile(
+              // heading: "Hall Warden", desc: "Prof. Sanjeeb Kumar Patra"),
               ColumnTile(heading: "B C Roy Ambulance", desc: "03222 281 008"),
               ColumnTile(heading: "Councelling Centre", desc: "03222 281 008")
             ]),
