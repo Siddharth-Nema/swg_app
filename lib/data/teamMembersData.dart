@@ -1,0 +1,284 @@
+List<Map<String, dynamic>> SMData = [
+  {
+    'facebookUrl':
+        'https://www.facebook.com/people/Himanshu-Jangir/pfbid0sDTWqxYeetk6xquyJpfrWXTTUearxMWewiKQ4SSwAhrNR2daxoVtUVUFaHQJ68oxl/?sk=about',
+    'instaUrl': 'https://www.instagram.com/himanshujangir2459/?next=%2F',
+    'linkedinUrl': 'https://www.linkedin.com/in/himanshu-jangir-868271290/',
+    'imageUrl':
+        'https://drive.google.com/open?id=1rTIvjZYDWeJC08c-b0KtdYnGP4vFnenS',
+    'name': 'Himanshu Jangir',
+    'smAcademicSession': '2024-25',
+    'rollNo': '23BT30015',
+    'headAcademicSession': null,
+  },
+  {
+    'facebookUrl':
+        'https://www.facebook.com/profile.php?id=100094388406906&mibextid=ZbWKwL',
+    'instaUrl': '', // Empty string for missing Instagram URL
+    'linkedinUrl':
+        'https://www.linkedin.com/in/katyayani-khola-00aa35293?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+    'imageUrl':
+        'https://drive.google.com/open?id=1_Z8Awmik0m9vFDm8wl8j_i8tfOZ8luHQ',
+    'name': 'Katyayani Khola',
+    'smAcademicSession': '2024-25',
+    'rollNo': '23EE10029',
+    'headAcademicSession': null,
+  },
+  {
+    'facebookUrl':
+        'https://www.facebook.com/profile.php?id=61550918732863&mibextid=kFxxJD',
+    'instaUrl':
+        'https://www.instagram.com/tanushagarwal128?igsh=a2Q3MTdzZDFqZjAy',
+    'linkedinUrl':
+        'https://www.linkedin.com/in/tanush-agarwal-83893727a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+    'imageUrl':
+        'https://drive.google.com/open?id=1KpMxLYmnRqH-OLMXCF3_QnovkejV8Skl',
+    'name': 'Tanush B Agarwal',
+    'smAcademicSession': '2024-25',
+    'rollNo': '23IM10040',
+    'headAcademicSession': null,
+  },
+  {
+    'facebookUrl':
+        'https://www.facebook.com/profile.php?id=61550226501699&sk=about',
+    'instaUrl': 'https://www.instagram.com/justt.moli/',
+    'linkedinUrl':
+        'www.linkedin.com/in/moli-maheshwari-9b796a285', // Notice the missing protocol (http/https)
+    'imageUrl':
+        'https://drive.google.com/open?id=16aj6Q9RYcZe3ukbFC5voQxnteAV-QOn4',
+    'name': 'Moli Maheshwari',
+    'smAcademicSession': '2024-25',
+    'rollNo': '23MF10025',
+    'headAcademicSession': null,
+  },
+  {
+    'facebookUrl':
+        'https://www.facebook.com/profile.php?id=100074070572990&mibextid=ZbWKwL',
+    'instaUrl':
+        'https://www.instagram.com/gaurangmehraaa?igsh=eGpmdHhpZHgyZ2g0',
+    'linkedinUrl':
+        'https://www.linkedin.com/in/gaurang-mehra-177700196?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+    'imageUrl':
+        'https://drive.google.com/open?id=13RRoB02Ur5KWoNMBy7JDZPMTY0O4FQRy',
+    'name': 'Gaurang Mehra',
+    'smAcademicSession': '2024-25',
+    'rollNo': '23AG30017',
+    'headAcademicSession': null,
+  },
+  {
+    'facebookUrl': 'https://www.facebook.com/shourya.godha',
+    'instaUrl': 'https://www.instagram.com/shourya_godha/',
+    'linkedinUrl': 'https://www.linkedin.com/in/shourya-godha-73050b28a/',
+    'imageUrl':
+        'https://drive.google.com/open?id=1LKyet6iZRfQu4TVjJ7_yQG7yTgNKJ0R0',
+    'name': 'Shourya Godha',
+    'smAcademicSession': '2024-25',
+    'rollNo': '23CS30050',
+    'headAcademicSession': null,
+  },
+  {
+    'facebookUrl': 'https://www.facebook.com/aryan.lohia.52687',
+    'instaUrl':
+        'https://www.instagram.com/lohia.aryan12?igsh=MXJhMTZ6MWFsNWppOA%3D%3D&utm_source=qr',
+    'linkedinUrl': 'https://www.linkedin.com/in/aryan-lohia-a46b52213/',
+    'imageUrl':
+        'https://drive.google.com/open?id=1eL_tEybbEh3FNvRz6vs25Dd7AdC0iCuy',
+    'name': 'Aryan Lohia',
+    'smAcademicSession': '2024-25',
+    'rollNo': '23EE10012',
+    'headAcademicSession': null,
+  },
+  {
+    'facebookUrl':
+        'https://www.facebook.com/profile.php?id=100095695266834&mibextid=ZbWKwL',
+    'instaUrl':
+        'https://www.instagram.com/siddharth._nema?igsh=bWFzcTg3ZWVyNTIy',
+    'linkedinUrl':
+        'https://www.linkedin.com/in/siddharth-nema-878142290?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+    'imageUrl':
+        'https://drive.google.com/open?id=1O-gGh0d_MgT-ifLaW7AcUZNZEA6Akh7S',
+    'name': 'Siddharth Nema',
+    'smAcademicSession': '2024-25',
+    'rollNo': '23MI10045',
+    'headAcademicSession': null,
+  },
+  {
+    'facebookUrl':
+        'https://www.facebook.com/share/SPqBbLWh9P5hDMiX/?mibextid=qi2Omg',
+    'instaUrl': 'https://www.instagram.com/harshil_kiwi?igsh=aXpvdG93ZTZmdGQ=',
+    'linkedinUrl':
+        'https://www.linkedin.com/in/harshil-agarwal-76815628b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+    'imageUrl':
+        'https://drive.google.com/open?id=1RiPGHCclj8uJ62R7gzZHy2Ob3ww3hO2B',
+    'name': 'Harshil Agarwal',
+    'smAcademicSession': '2024-25',
+    'rollNo': '23MI10019',
+    'headAcademicSession': null,
+  },
+  {
+    'facebookUrl': 'https://www.facebook.com/ashish.wonder.1',
+    'instaUrl':
+        'https://www.instagram.com/ashishreddy_02?igsh=bDFqczdoaGE0dGJ5',
+    'linkedinUrl': 'https://www.linkedin.com/in/ashish-reddy-9804a3303/',
+    'imageUrl':
+        'https://drive.google.com/open?id=1ea-IUzl9R2FQDx2ooGMHIGqSN7qwQZ-d',
+    'name': 'Ashish Reddy',
+    'smAcademicSession': '2024-25',
+    'rollNo': '23GG10035',
+    'headAcademicSession': null,
+  },
+  {
+    'facebookUrl': 'https://www.facebook.com/narsimha.bhukya.775/',
+    'instaUrl': 'https://www.instagram.com/shashikumarbhukya/',
+    'linkedinUrl':
+        'https://www.linkedin.com/me?trk=p_mwlite_feed-secondary_nav', // Notice the incomplete LinkedIn URL
+    'imageUrl':
+        'https://drive.google.com/open?id=1LNjd3Ofp-jpIOyt_7-IctLWfX0xq60Fp',
+    'name': 'Bhukya Shashi Kumar',
+    'smAcademicSession': '2024-25',
+    'rollNo': '23EE10014',
+    'headAcademicSession': null,
+  },
+  {
+    'facebookUrl':
+        'https://www.facebook.com/profile.php?id=100093308065829&mibextid=ZbWKwL',
+    'instaUrl': 'https://www.instagram.com/ishan_ph2005?igsh=djFtNTg5b3doYjJq',
+    'linkedinUrl':
+        'https://www.linkedin.com/in/ishan-phanse-003555288?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+    'imageUrl':
+        'https://drive.google.com/open?id=1IkgCr5rFgfBB-6pH6ass3nmMxyMxFHw0',
+    'name': 'Ishan Phanse',
+    'smAcademicSession': '2024-25',
+    'rollNo': '23AE10015',
+    'headAcademicSession': null,
+  },
+  {
+    'facebookUrl': 'https://www.facebook.com/profile.php?id=61551235101208',
+    'instaUrl': 'https://www.instagram.com/whynot_jyoti?igsh=YWg0NnRhdW90eTg2',
+    'linkedinUrl': 'https://www.linkedin.com/in/arkajyoti-dey-b5a409255/',
+    'imageUrl':
+        'https://drive.google.com/open?id=1d_UtBoRHer4zS4qRlSUWxt0ybZCoE9RM',
+    'name': 'Arkajyoti Dey',
+    'smAcademicSession': '2024-25',
+    'rollNo': '23IE10008',
+    'headAcademicSession': null,
+  },
+  {
+    'facebookUrl': 'https://www.facebook.com/aaradhya1729?mibextid=ZbWKwL',
+    'instaUrl':
+        'https://www.instagram.com/aaradhya_itis?igsh=MWo1bGZ3dGhoeXJmaQ==',
+    'linkedinUrl': 'https://www.linkedin.com/in/aaradhya-shukla-205289280',
+    'imageUrl':
+        'https://drive.google.com/open?id=18xCrSug-R8jKD7i1bKn0-J6zLAyS_rPF',
+    'name': 'Aaradhya Shukla',
+    'smAcademicSession': '2024-25',
+    'rollNo': '23CH10001',
+    'headAcademicSession': null,
+  },
+  {
+    'facebookUrl': 'https://www.facebook.com/profile.php?id=61551083754367',
+    'instaUrl': 'https://www.instagram.com/bhavy11vaishnav/',
+    'linkedinUrl':
+        'https://www.linkedin.com/in/bhavyvaishnav-kgpian/overlay/urn:li:fsd_profilePosition:(ACoAADr11_ABzBJQ5mK3qWTeZjFGqsIBONg9VuI,2249698255)/skill-associations-details/', // Notice the complex LinkedIn URL
+    'imageUrl':
+        'https://drive.google.com/open?id=12WDtHyhPPsUDPp_GtB-_Swr76YFl1kM-',
+    'name': 'Bhavy Vaishnav',
+    'smAcademicSession': '2024-25',
+    'rollNo': '23AR10009',
+    'headAcademicSession': null,
+  },
+  {
+    'facebookUrl': 'https://www.facebook.com/imjairaj/',
+    'instaUrl': 'https://www.instagram.com/me.jairaj/',
+    'linkedinUrl': 'https://www.linkedin.com/in/j-raj',
+    'imageUrl':
+        'https://drive.google.com/open?id=1RvBQ1F1gJGgsIX4WS7jvL0UaGX1wmPMY',
+    'name': 'Jai Raj',
+    'smAcademicSession': '2024-25',
+    'rollNo': '23EC10031',
+    'headAcademicSession': null,
+  },
+  {
+    'facebookUrl':
+        'https://www.facebook.com/profile.php?id=61550666596899&mibextid=ZbWKwL',
+    'instaUrl':
+        '', // Handle missing Instagram URL (consider placeholder or null value)
+    'linkedinUrl': 'https://www.linkedin.com/in/dnyaneshwari-ghare-9a274928b',
+    'imageUrl':
+        'https://drive.google.com/open?id=1YzdA7TuiMDjI3Sm9qKPBM3-FsB2vDSL-',
+    'name': 'Dnyaneshwari Ghare',
+    'smAcademicSession': '2024-25',
+    'rollNo': '23IM30008',
+    'headAcademicSession': null,
+  },
+  {
+    'facebookUrl': 'https://www.facebook.com/profile.php?id=61550776423104',
+    'instaUrl':
+        '', // Handle missing Instagram URL (consider placeholder or null value)
+    'linkedinUrl': 'https://www.linkedin.com/in/rithvik-thota-17a7b1290/',
+    'imageUrl':
+        'https://drive.google.com/open?id=1-1-XCiIsJrwVTY1EA0Yr4DhMlLo_l6lK',
+    'name': 'Thota Rithvik',
+    'smAcademicSession': '2024-25',
+    'rollNo': '23CS10072',
+    'headAcademicSession': null,
+  },
+  {
+    'facebookUrl':
+        'https://www.facebook.com/profile.php?id=100012078606272&name=xhp_nt__fb__action__open_user',
+    // Consider ethical implications and potential privacy violations of including a full Facebook profile URL if the user doesn't have a public profile.
+    //  - You might want to replace it with a placeholder or omit it entirely depending on your use case.
+    'instaUrl':
+        '', // Handle missing Instagram URL (consider placeholder or null value)
+    'linkedinUrl':
+        'https://www.linkedin.com/in/harsh-gurjar-0504bb290?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+    'imageUrl':
+        'https://drive.google.com/open?id=1H9LU1kwPCT_Flah1GUHFFqkYK-j17Boa',
+    'name': 'Harsh Gurjar',
+    'smAcademicSession': '2024-25',
+    'rollNo': '23GG10020',
+    'headAcademicSession': null,
+  }
+];
+
+List<Map<String, dynamic>> HeadData = [
+  {
+    'facebookUrl': 'https://www.facebook.com/profile.php?id=100087187377653',
+    'instaUrl':
+        '', // Handle missing Instagram URL (consider placeholder or null value)
+    'linkedinUrl': 'https://www.linkedin.com/in/sahil-asawa-/',
+    'imageUrl':
+        'https://drive.google.com/open?id=15WEnm2M4MY52qssc6Dv-zCumIeP_GmwJ',
+    'name': 'Sahil Asawa',
+    'smAcademicSession': '2023-24', // Previous academic session
+    'rollNo': '22CS10065',
+    'headAcademicSession':
+        '2024-25', // Head academic session (might need clarification)
+  },
+  {
+    'facebookUrl': 'https://www.facebook.com/bhawesh.kukreja.5/',
+    'instaUrl': 'https://www.instagram.com/bhawesh__kukreja/?hl=en',
+    'linkedinUrl': 'https://www.linkedin.com/in/bhawesh-kukreja-430a46257/',
+    'imageUrl':
+        'https://drive.google.com/open?id=1z5sVUhgmzqw2e6Ev119qOqt7C95W8DcI',
+    'name': 'Bhawesh Kukreja',
+    'smAcademicSession': '2023-24', // Previous academic session
+    'rollNo': '22AR10003',
+    'headAcademicSession':
+        '2024-25', // Head academic session (might need clarification)
+  },
+  {
+    'facebookUrl':
+        'https://www.facebook.com/share/6sCLi7KtsUxzmonU/?mibextid=qi2Omg',
+    'instaUrl': 'https://www.instagram.com/_shivom_b?igsh=MWVqa3gzOHFzbGQ0dg==',
+    'linkedinUrl':
+        'https://www.linkedin.com/in/shivam-bisen-812927250?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+    'imageUrl':
+        'https://drive.google.com/open?id=1dvLM-79NZoINDdsPFThHqMP052hSvhlB',
+    'name': 'Shivam Bisen',
+    'smAcademicSession': '2023-24', // Previous academic session
+    'rollNo': '22AR10028',
+    'headAcademicSession':
+        '2024-25', // Head academic session (might need clarification)
+  }
+];

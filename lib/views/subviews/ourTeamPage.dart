@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:swg_flutter/constants.dart';
+import 'package:swg_flutter/data/teamMembersData.dart';
 import 'package:swg_flutter/models/TeamMember.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -38,52 +39,52 @@ class _OurTeamPageState extends State<OurTeamPage>
           surfaceTintColor: Colors.white,
           elevation: 1.0,
           toolbarHeight: 120,
-          title: Column(
+          title: const Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Text(
+              Text(
                 'Our Team',
                 textAlign: TextAlign.center,
                 style:
                     TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
               ),
-              const SizedBox(height: 4),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  const Text(
-                    'Session : ',
-                    style: TextStyle(color: Colors.black54, fontSize: 16),
-                  ),
-                  const SizedBox(width: 8),
-                  DropdownButton<String>(
-                    items: sessions.map((String value) {
-                      return DropdownMenuItem<String>(
-                        value: value,
-                        child: Text(value),
-                      );
-                    }).toList(),
-                    onChanged: (String? value) {
-                      setState(() {
-                        selectedSession = value!;
-                      });
-                    },
-                    hint: const Text('Select Session'),
-                    value: selectedSession,
-                    borderRadius: BorderRadius.circular(8),
-                    icon: const Icon(Icons.arrow_drop_down),
-                    iconSize: 24,
-                    elevation: 16,
-                    style: const TextStyle(color: Colors.black, fontSize: 16),
-                    underline: Container(
-                      height: 2,
-                      color: Colors.black,
-                    ),
-                  ),
-                ],
-              ),
+              SizedBox(height: 4),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.center,
+              //   mainAxisSize: MainAxisSize.min,
+              //   children: [
+              //     const Text(
+              //       'Session : ',
+              //       style: TextStyle(color: Colors.black54, fontSize: 16),
+              //     ),
+              //     const SizedBox(width: 8),
+              //     DropdownButton<String>(
+              //       items: sessions.map((String value) {
+              //         return DropdownMenuItem<String>(
+              //           value: value,
+              //           child: Text(value),
+              //         );
+              //       }).toList(),
+              //       onChanged: (String? value) {
+              //         setState(() {
+              //           selectedSession = value!;
+              //         });
+              //       },
+              //       hint: const Text('Select Session'),
+              //       value: selectedSession,
+              //       borderRadius: BorderRadius.circular(8),
+              //       icon: const Icon(Icons.arrow_drop_down),
+              //       iconSize: 24,
+              //       elevation: 16,
+              //       style: const TextStyle(color: Colors.black, fontSize: 16),
+              //       underline: Container(
+              //         height: 2,
+              //         color: Colors.black,
+              //       ),
+              //     ),
+              //   ],
+              // ),
             ],
           ),
           centerTitle: true,
@@ -139,21 +140,23 @@ class _OurTeamPageState extends State<OurTeamPage>
                 child: Text('Error: ${snapshot.error}'),
               );
             } else {
-              List<TeamMember> teamMembers = snapshot.data as List<TeamMember>;
+              //List<TeamMember> teamMembers = snapshot.data as List<TeamMember>;
               return TabBarView(
                 controller: _tabController,
                 children: [
                   TeamGridView(
-                    teamMembers: teamMembers
-                        .where((element) =>
-                            element.smAcademicSession == selectedSession)
-                        .toList(),
+                    teamMembers: SMData.map<TeamMember>(
+                      (e) {
+                        return TeamMember.fromJson(e);
+                      },
+                    ).toList(),
                   ),
                   TeamGridView(
-                    teamMembers: teamMembers
-                        .where((element) =>
-                            element.headAcademicSession == selectedSession)
-                        .toList(),
+                    teamMembers: HeadData.map<TeamMember>(
+                      (e) {
+                        return TeamMember.fromJson(e);
+                      },
+                    ).toList(),
                   ),
                   // const Center(child: Text('Heads')),
                 ],
