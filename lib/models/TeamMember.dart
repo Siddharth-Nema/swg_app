@@ -54,7 +54,6 @@ class TeamMember {
     List<TeamMember> teamMembers = [];
     snapshot.docs.forEach((doc) {
       teamMembers.add(TeamMember.fromJson(doc.data()));
-      print(doc.data());
     });
     return teamMembers;
   }

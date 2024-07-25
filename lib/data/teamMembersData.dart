@@ -5,7 +5,7 @@ List<Map<String, dynamic>> SMData = [
     'instaUrl': 'https://www.instagram.com/himanshujangir2459/?next=%2F',
     'linkedinUrl': 'https://www.linkedin.com/in/himanshu-jangir-868271290/',
     'imageUrl':
-        'https://drive.google.com/open?id=1rTIvjZYDWeJC08c-b0KtdYnGP4vFnenS',
+        'https://drive.usercontent.google.com/download?id=1rTIvjZYDWeJC08c-b0KtdYnGP4vFnenS&export=view&authuser=0',
     'name': 'Himanshu Jangir',
     'smAcademicSession': '2024-25',
     'rollNo': '23BT30015',
@@ -18,7 +18,7 @@ List<Map<String, dynamic>> SMData = [
     'linkedinUrl':
         'https://www.linkedin.com/in/katyayani-khola-00aa35293?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
     'imageUrl':
-        'https://drive.google.com/open?id=1_Z8Awmik0m9vFDm8wl8j_i8tfOZ8luHQ',
+        'https://drive.usercontent.google.com/download?id=1_Z8Awmik0m9vFDm8wl8j_i8tfOZ8luHQ&export=view&authuser=0',
     'name': 'Katyayani Khola',
     'smAcademicSession': '2024-25',
     'rollNo': '23EE10029',
@@ -32,7 +32,7 @@ List<Map<String, dynamic>> SMData = [
     'linkedinUrl':
         'https://www.linkedin.com/in/tanush-agarwal-83893727a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
     'imageUrl':
-        'https://drive.google.com/open?id=1KpMxLYmnRqH-OLMXCF3_QnovkejV8Skl',
+        'https://drive.usercontent.google.com/download?id=1KpMxLYmnRqH-OLMXCF3_QnovkejV8Skl&export=view&authuser=0',
     'name': 'Tanush B Agarwal',
     'smAcademicSession': '2024-25',
     'rollNo': '23IM10040',
@@ -45,7 +45,7 @@ List<Map<String, dynamic>> SMData = [
     'linkedinUrl':
         'www.linkedin.com/in/moli-maheshwari-9b796a285', // Notice the missing protocol (http/https)
     'imageUrl':
-        'https://drive.google.com/open?id=16aj6Q9RYcZe3ukbFC5voQxnteAV-QOn4',
+        'https://drive.usercontent.google.com/download?id=16aj6Q9RYcZe3ukbFC5voQxnteAV-QOn4&export=view&authuser=0',
     'name': 'Moli Maheshwari',
     'smAcademicSession': '2024-25',
     'rollNo': '23MF10025',
@@ -59,7 +59,7 @@ List<Map<String, dynamic>> SMData = [
     'linkedinUrl':
         'https://www.linkedin.com/in/gaurang-mehra-177700196?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
     'imageUrl':
-        'https://drive.google.com/open?id=13RRoB02Ur5KWoNMBy7JDZPMTY0O4FQRy',
+        'https://drive.usercontent.google.com/download?id=13RRoB02Ur5KWoNMBy7JDZPMTY0O4FQRy&export=view&authuser=0',
     'name': 'Gaurang Mehra',
     'smAcademicSession': '2024-25',
     'rollNo': '23AG30017',
@@ -70,7 +70,7 @@ List<Map<String, dynamic>> SMData = [
     'instaUrl': 'https://www.instagram.com/shourya_godha/',
     'linkedinUrl': 'https://www.linkedin.com/in/shourya-godha-73050b28a/',
     'imageUrl':
-        'https://drive.google.com/open?id=1LKyet6iZRfQu4TVjJ7_yQG7yTgNKJ0R0',
+        'https://drive.usercontent.google.com/download?id=1LKyet6iZRfQu4TVjJ7_yQG7yTgNKJ0R0&export=view&authuser=0',
     'name': 'Shourya Godha',
     'smAcademicSession': '2024-25',
     'rollNo': '23CS30050',
@@ -82,7 +82,7 @@ List<Map<String, dynamic>> SMData = [
         'https://www.instagram.com/lohia.aryan12?igsh=MXJhMTZ6MWFsNWppOA%3D%3D&utm_source=qr',
     'linkedinUrl': 'https://www.linkedin.com/in/aryan-lohia-a46b52213/',
     'imageUrl':
-        'https://drive.google.com/open?id=1eL_tEybbEh3FNvRz6vs25Dd7AdC0iCuy',
+        'https://drive.usercontent.google.com/download?id=1eL_tEybbEh3FNvRz6vs25Dd7AdC0iCuy&export=view&authuser=0',
     'name': 'Aryan Lohia',
     'smAcademicSession': '2024-25',
     'rollNo': '23EE10012',
@@ -96,10 +96,10 @@ List<Map<String, dynamic>> SMData = [
     'linkedinUrl':
         'https://www.linkedin.com/in/siddharth-nema-878142290?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
     'imageUrl':
-        'https://drive.google.com/open?id=1O-gGh0d_MgT-ifLaW7AcUZNZEA6Akh7S',
+        'https://drive.usercontent.google.com/download?id=1O-gGh0d_MgT-ifLaW7AcUZNZEA6Akh7S&export=view&authuser=0',
     'name': 'Siddharth Nema',
     'smAcademicSession': '2024-25',
-    'rollNo': '23MI10045',
+    'rollNo': '23MA10078',
     'headAcademicSession': null,
   },
   {
@@ -109,7 +109,7 @@ List<Map<String, dynamic>> SMData = [
     'linkedinUrl':
         'https://www.linkedin.com/in/harshil-agarwal-76815628b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
     'imageUrl':
-        'https://drive.google.com/open?id=1RiPGHCclj8uJ62R7gzZHy2Ob3ww3hO2B',
+        'https://drive.usercontent.google.com/download?id=1RiPGHCclj8uJ62R7gzZHy2Ob3ww3hO2B&export=view&authuser=0',
     'name': 'Harshil Agarwal',
     'smAcademicSession': '2024-25',
     'rollNo': '23MI10019',
@@ -121,7 +121,7 @@ List<Map<String, dynamic>> SMData = [
         'https://www.instagram.com/ashishreddy_02?igsh=bDFqczdoaGE0dGJ5',
     'linkedinUrl': 'https://www.linkedin.com/in/ashish-reddy-9804a3303/',
     'imageUrl':
-        'https://drive.google.com/open?id=1ea-IUzl9R2FQDx2ooGMHIGqSN7qwQZ-d',
+        'https://drive.usercontent.google.com/download?id=1ea-IUzl9R2FQDx2ooGMHIGqSN7qwQZ-d&export=view&authuser=0',
     'name': 'Ashish Reddy',
     'smAcademicSession': '2024-25',
     'rollNo': '23GG10035',
@@ -133,7 +133,7 @@ List<Map<String, dynamic>> SMData = [
     'linkedinUrl':
         'https://www.linkedin.com/me?trk=p_mwlite_feed-secondary_nav', // Notice the incomplete LinkedIn URL
     'imageUrl':
-        'https://drive.google.com/open?id=1LNjd3Ofp-jpIOyt_7-IctLWfX0xq60Fp',
+        'https://drive.usercontent.google.com/download?id=1LNjd3Ofp-jpIOyt_7-IctLWfX0xq60Fp&export=view&authuser=0',
     'name': 'Bhukya Shashi Kumar',
     'smAcademicSession': '2024-25',
     'rollNo': '23EE10014',
@@ -146,7 +146,7 @@ List<Map<String, dynamic>> SMData = [
     'linkedinUrl':
         'https://www.linkedin.com/in/ishan-phanse-003555288?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
     'imageUrl':
-        'https://drive.google.com/open?id=1IkgCr5rFgfBB-6pH6ass3nmMxyMxFHw0',
+        'https://drive.usercontent.google.com/download?id=1IkgCr5rFgfBB-6pH6ass3nmMxyMxFHw0&export=view&authuser=0',
     'name': 'Ishan Phanse',
     'smAcademicSession': '2024-25',
     'rollNo': '23AE10015',
@@ -157,7 +157,7 @@ List<Map<String, dynamic>> SMData = [
     'instaUrl': 'https://www.instagram.com/whynot_jyoti?igsh=YWg0NnRhdW90eTg2',
     'linkedinUrl': 'https://www.linkedin.com/in/arkajyoti-dey-b5a409255/',
     'imageUrl':
-        'https://drive.google.com/open?id=1d_UtBoRHer4zS4qRlSUWxt0ybZCoE9RM',
+        'https://drive.usercontent.google.com/download?id=1d_UtBoRHer4zS4qRlSUWxt0ybZCoE9RM&export=view&authuser=0',
     'name': 'Arkajyoti Dey',
     'smAcademicSession': '2024-25',
     'rollNo': '23IE10008',
@@ -169,7 +169,7 @@ List<Map<String, dynamic>> SMData = [
         'https://www.instagram.com/aaradhya_itis?igsh=MWo1bGZ3dGhoeXJmaQ==',
     'linkedinUrl': 'https://www.linkedin.com/in/aaradhya-shukla-205289280',
     'imageUrl':
-        'https://drive.google.com/open?id=18xCrSug-R8jKD7i1bKn0-J6zLAyS_rPF',
+        'https://drive.usercontent.google.com/download?id=18xCrSug-R8jKD7i1bKn0-J6zLAyS_rPF&export=view&authuser=0',
     'name': 'Aaradhya Shukla',
     'smAcademicSession': '2024-25',
     'rollNo': '23CH10001',
@@ -181,7 +181,7 @@ List<Map<String, dynamic>> SMData = [
     'linkedinUrl':
         'https://www.linkedin.com/in/bhavyvaishnav-kgpian/overlay/urn:li:fsd_profilePosition:(ACoAADr11_ABzBJQ5mK3qWTeZjFGqsIBONg9VuI,2249698255)/skill-associations-details/', // Notice the complex LinkedIn URL
     'imageUrl':
-        'https://drive.google.com/open?id=12WDtHyhPPsUDPp_GtB-_Swr76YFl1kM-',
+        'https://drive.usercontent.google.com/download?id=12WDtHyhPPsUDPp_GtB-_Swr76YFl1kM-&export=view&authuser=0',
     'name': 'Bhavy Vaishnav',
     'smAcademicSession': '2024-25',
     'rollNo': '23AR10009',
@@ -192,7 +192,7 @@ List<Map<String, dynamic>> SMData = [
     'instaUrl': 'https://www.instagram.com/me.jairaj/',
     'linkedinUrl': 'https://www.linkedin.com/in/j-raj',
     'imageUrl':
-        'https://drive.google.com/open?id=1RvBQ1F1gJGgsIX4WS7jvL0UaGX1wmPMY',
+        'https://drive.usercontent.google.com/download?id=1RvBQ1F1gJGgsIX4WS7jvL0UaGX1wmPMY&export=view&authuser=0',
     'name': 'Jai Raj',
     'smAcademicSession': '2024-25',
     'rollNo': '23EC10031',
@@ -205,7 +205,7 @@ List<Map<String, dynamic>> SMData = [
         '', // Handle missing Instagram URL (consider placeholder or null value)
     'linkedinUrl': 'https://www.linkedin.com/in/dnyaneshwari-ghare-9a274928b',
     'imageUrl':
-        'https://drive.google.com/open?id=1YzdA7TuiMDjI3Sm9qKPBM3-FsB2vDSL-',
+        'https://drive.usercontent.google.com/download?id=1YzdA7TuiMDjI3Sm9qKPBM3-FsB2vDSL-&export=view&authuser=0',
     'name': 'Dnyaneshwari Ghare',
     'smAcademicSession': '2024-25',
     'rollNo': '23IM30008',
@@ -217,7 +217,7 @@ List<Map<String, dynamic>> SMData = [
         '', // Handle missing Instagram URL (consider placeholder or null value)
     'linkedinUrl': 'https://www.linkedin.com/in/rithvik-thota-17a7b1290/',
     'imageUrl':
-        'https://drive.google.com/open?id=1-1-XCiIsJrwVTY1EA0Yr4DhMlLo_l6lK',
+        'https://drive.usercontent.google.com/download?id=1-1-XCiIsJrwVTY1EA0Yr4DhMlLo_l6lK&export=view&authuser=0',
     'name': 'Thota Rithvik',
     'smAcademicSession': '2024-25',
     'rollNo': '23CS10072',
@@ -233,7 +233,7 @@ List<Map<String, dynamic>> SMData = [
     'linkedinUrl':
         'https://www.linkedin.com/in/harsh-gurjar-0504bb290?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
     'imageUrl':
-        'https://drive.google.com/open?id=1H9LU1kwPCT_Flah1GUHFFqkYK-j17Boa',
+        'https://drive.usercontent.google.com/download?id=1H9LU1kwPCT_Flah1GUHFFqkYK-j17Boa&export=view&authuser=0',
     'name': 'Harsh Gurjar',
     'smAcademicSession': '2024-25',
     'rollNo': '23GG10020',
@@ -243,42 +243,64 @@ List<Map<String, dynamic>> SMData = [
 
 List<Map<String, dynamic>> HeadData = [
   {
-    'facebookUrl': 'https://www.facebook.com/profile.php?id=100087187377653',
-    'instaUrl':
-        '', // Handle missing Instagram URL (consider placeholder or null value)
-    'linkedinUrl': 'https://www.linkedin.com/in/sahil-asawa-/',
-    'imageUrl':
-        'https://drive.google.com/open?id=15WEnm2M4MY52qssc6Dv-zCumIeP_GmwJ',
-    'name': 'Sahil Asawa',
+    'facebookUrl':
+        'https://www.facebook.com/share/6sCLi7KtsUxzmonU/?mibextid=qi2Omg',
+    'instaUrl': 'https://www.instagram.com/_shivom_b?igsh=MWVqa3gzOHFzbGQ0dg==',
+    'linkedinUrl':
+        'https://www.linkedin.com/in/shivam-bisen-812927250?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+    'imageUrl': 'https://swgiitkgp.org/assets/images/shivam.jpg',
+    'name': 'Shivam Bisen',
     'smAcademicSession': '2023-24', // Previous academic session
-    'rollNo': '22CS10065',
+    'rollNo': '22AR10028',
     'headAcademicSession':
         '2024-25', // Head academic session (might need clarification)
   },
   {
-    'facebookUrl': 'https://www.facebook.com/bhawesh.kukreja.5/',
-    'instaUrl': 'https://www.instagram.com/bhawesh__kukreja/?hl=en',
-    'linkedinUrl': 'https://www.linkedin.com/in/bhawesh-kukreja-430a46257/',
-    'imageUrl':
-        'https://drive.google.com/open?id=1z5sVUhgmzqw2e6Ev119qOqt7C95W8DcI',
+    'facebookUrl':
+        'https://www.facebook.com/akshat.kapoor.9461?mibextid=ZbWKwL',
+    'instaUrl': 'https://www.instagram.com/akshatkapoor05/',
+    'linkedinUrl': 'https://www.linkedin.com/in/akshat-kapoor-7955b6259/',
+    'imageUrl': 'https://swgiitkgp.org/assets/images/akshat.jpg',
+    'name': 'Akshat Kapoor',
+    'smAcademicSession': '2023-24', // Previous academic session
+    'rollNo': '22CH10089',
+    'headAcademicSession':
+        '2024-25', // Head academic session (might need clarification)
+  },
+  {
+    'facebookUrl':
+        'https://www.facebook.com/profile.php?id=100087299360656&mibextid=ZbWKwL',
+    'instaUrl': '',
+    'linkedinUrl': 'https://www.linkedin.com/in/astha-kumari-980170259',
+    'imageUrl': 'https://swgiitkgp.org/assets/images/astha.jpg',
+    'name': 'Astha Kumari',
+    'smAcademicSession': '2023-24', // Previous academic session
+    'rollNo': '22MI10018',
+    'headAcademicSession':
+        '2024-25', // Head academic session (might need clarification)
+  },
+  {
+    'facebookUrl':
+        'https://www.facebook.com/profile.php?id=100088417697358&mibextid=ZbWKwL',
+    'instaUrl': '',
+    'linkedinUrl':
+        'https://www.linkedin.com/in/astitvaprofileview?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+    'imageUrl': 'https://swgiitkgp.org/assets/images/astitva.jpg',
+    'name': 'Astitva Srivastava',
+    'smAcademicSession': '2023-24', // Previous academic session
+    'rollNo': '22EC10022',
+    'headAcademicSession':
+        '2024-25', // Head academic session (might need clarification)
+  },
+  {
+    'facebookUrl': 'https://www.facebook.com/bhawesh.kukreja.5?mibextid=ZbWKwL',
+    'instaUrl': '',
+    'linkedinUrl': 'https://www.linkedin.com/in/bhawesh-kukreja-430a46257',
+    'imageUrl': 'https://swgiitkgp.org/assets/images/bhawesh.jpg',
     'name': 'Bhawesh Kukreja',
     'smAcademicSession': '2023-24', // Previous academic session
     'rollNo': '22AR10003',
     'headAcademicSession':
         '2024-25', // Head academic session (might need clarification)
   },
-  {
-    'facebookUrl':
-        'https://www.facebook.com/share/6sCLi7KtsUxzmonU/?mibextid=qi2Omg',
-    'instaUrl': 'https://www.instagram.com/_shivom_b?igsh=MWVqa3gzOHFzbGQ0dg==',
-    'linkedinUrl':
-        'https://www.linkedin.com/in/shivam-bisen-812927250?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
-    'imageUrl':
-        'https://drive.google.com/open?id=1dvLM-79NZoINDdsPFThHqMP052hSvhlB',
-    'name': 'Shivam Bisen',
-    'smAcademicSession': '2023-24', // Previous academic session
-    'rollNo': '22AR10028',
-    'headAcademicSession':
-        '2024-25', // Head academic session (might need clarification)
-  }
 ];

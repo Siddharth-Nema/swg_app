@@ -32,140 +32,121 @@ class _OurTeamPageState extends State<OurTeamPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(140.0),
-        child: AppBar(
-          backgroundColor: Colors.white,
-          surfaceTintColor: Colors.white,
-          elevation: 1.0,
-          toolbarHeight: 120,
-          title: const Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                'Our Team',
-                textAlign: TextAlign.center,
-                style:
-                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-              ),
-              SizedBox(height: 4),
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.center,
-              //   mainAxisSize: MainAxisSize.min,
-              //   children: [
-              //     const Text(
-              //       'Session : ',
-              //       style: TextStyle(color: Colors.black54, fontSize: 16),
-              //     ),
-              //     const SizedBox(width: 8),
-              //     DropdownButton<String>(
-              //       items: sessions.map((String value) {
-              //         return DropdownMenuItem<String>(
-              //           value: value,
-              //           child: Text(value),
-              //         );
-              //       }).toList(),
-              //       onChanged: (String? value) {
-              //         setState(() {
-              //           selectedSession = value!;
-              //         });
-              //       },
-              //       hint: const Text('Select Session'),
-              //       value: selectedSession,
-              //       borderRadius: BorderRadius.circular(8),
-              //       icon: const Icon(Icons.arrow_drop_down),
-              //       iconSize: 24,
-              //       elevation: 16,
-              //       style: const TextStyle(color: Colors.black, fontSize: 16),
-              //       underline: Container(
-              //         height: 2,
-              //         color: Colors.black,
-              //       ),
-              //     ),
-              //   ],
-              // ),
-            ],
-          ),
-          centerTitle: true,
-          bottom: PreferredSize(
-            preferredSize: const Size.fromHeight(48.0),
-            child: Container(
-              // color: GlobalStyles.kPrimaryBlueColor,
-              decoration: BoxDecoration(
-                color: GlobalStyles.kPrimaryBlueColor,
-                borderRadius:
-                    const BorderRadius.vertical(top: Radius.circular(24)),
-              ),
-              child: TabBar(
-                controller: _tabController,
-                labelColor: Colors.black,
-                unselectedLabelColor: Colors.black54,
-                indicator: const BoxDecoration(
-                  border: Border(
-                    bottom: BorderSide(
-                      color: Colors.black,
-                      width: 2,
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(140.0),
+          child: AppBar(
+            backgroundColor: Colors.white,
+            surfaceTintColor: Colors.white,
+            elevation: 1.0,
+            toolbarHeight: 120,
+            title: const Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  'Our Team',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Colors.black, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 4),
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.center,
+                //   mainAxisSize: MainAxisSize.min,
+                //   children: [
+                //     const Text(
+                //       'Session : ',
+                //       style: TextStyle(color: Colors.black54, fontSize: 16),
+                //     ),
+                //     const SizedBox(width: 8),
+                //     DropdownButton<String>(
+                //       items: sessions.map((String value) {
+                //         return DropdownMenuItem<String>(
+                //           value: value,
+                //           child: Text(value),
+                //         );
+                //       }).toList(),
+                //       onChanged: (String? value) {
+                //         setState(() {
+                //           selectedSession = value!;
+                //         });
+                //       },
+                //       hint: const Text('Select Session'),
+                //       value: selectedSession,
+                //       borderRadius: BorderRadius.circular(8),
+                //       icon: const Icon(Icons.arrow_drop_down),
+                //       iconSize: 24,
+                //       elevation: 16,
+                //       style: const TextStyle(color: Colors.black, fontSize: 16),
+                //       underline: Container(
+                //         height: 2,
+                //         color: Colors.black,
+                //       ),
+                //     ),
+                //   ],
+                // ),
+              ],
+            ),
+            centerTitle: true,
+            bottom: PreferredSize(
+              preferredSize: const Size.fromHeight(48.0),
+              child: Container(
+                // color: GlobalStyles.kPrimaryBlueColor,
+                decoration: BoxDecoration(
+                  color: GlobalStyles.kPrimaryBlueColor,
+                  borderRadius:
+                      const BorderRadius.vertical(top: Radius.circular(24)),
+                ),
+                child: TabBar(
+                  controller: _tabController,
+                  labelColor: Colors.black,
+                  unselectedLabelColor: Colors.black54,
+                  indicator: const BoxDecoration(
+                    border: Border(
+                      bottom: BorderSide(
+                        color: Colors.black,
+                        width: 2,
+                      ),
                     ),
                   ),
-                ),
-                labelStyle: GoogleFonts.poppins(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
-                ),
-                tabs: const [
-                  Tab(
-                    // child: Text('Student Members'),
-                    text: 'Student Members',
+                  labelStyle: GoogleFonts.poppins(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
                   ),
-                  Tab(
-                    text: 'Heads',
-                  ),
-                ],
+                  tabs: const [
+                    Tab(
+                      // child: Text('Student Members'),
+                      text: 'Student Members',
+                    ),
+                    Tab(
+                      text: 'Heads',
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
         ),
-      ),
-      body: FutureBuilder(
-        future: TeamMember.fetchTeamMembers(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          } else {
-            if (snapshot.hasError) {
-              return Center(
-                child: Text('Error: ${snapshot.error}'),
-              );
-            } else {
-              //List<TeamMember> teamMembers = snapshot.data as List<TeamMember>;
-              return TabBarView(
-                controller: _tabController,
-                children: [
-                  TeamGridView(
-                    teamMembers: SMData.map<TeamMember>(
-                      (e) {
-                        return TeamMember.fromJson(e);
-                      },
-                    ).toList(),
-                  ),
-                  TeamGridView(
-                    teamMembers: HeadData.map<TeamMember>(
-                      (e) {
-                        return TeamMember.fromJson(e);
-                      },
-                    ).toList(),
-                  ),
-                  // const Center(child: Text('Heads')),
-                ],
-              );
-            }
-          }
-        },
-      ),
-    );
+        body: TabBarView(
+          controller: _tabController,
+          children: [
+            TeamGridView(
+              teamMembers: SMData.map<TeamMember>(
+                (e) {
+                  return TeamMember.fromJson(e);
+                },
+              ).toList(),
+            ),
+            TeamGridView(
+              teamMembers: HeadData.map<TeamMember>(
+                (e) {
+                  return TeamMember.fromJson(e);
+                },
+              ).toList(),
+            ),
+            // const Center(child: Text('Heads')),
+          ],
+        ));
   }
 }
 
@@ -225,7 +206,8 @@ class TeamCard extends StatelessWidget {
                     color: Colors.black,
                   ),
                   child: Image.network(
-                    "https://drive.usercontent.google.com/download?id=${member.imageUrl.split("id=")[1]}&export=view&authuser=0",
+                    member
+                        .imageUrl, //https://drive.usercontent.google.com/download?id=${member.imageUrl.split("id=")[1]}&export=view&authuser=0
                     errorBuilder: (context, error, stackTrace) => const Icon(
                       Icons.error,
                       color: Colors.red,
