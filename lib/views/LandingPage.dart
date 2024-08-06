@@ -1,7 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:swg_flutter/constants.dart';
 import 'package:swg_flutter/models/Department.dart';
 import 'package:swg_flutter/models/Society.dart';
@@ -9,7 +8,6 @@ import 'package:swg_flutter/views/SocietiesPage.dart';
 import 'package:swg_flutter/views/subviews/KnowYourDepartment.dart';
 import 'package:swg_flutter/widgets/StudyMaterial/year_wise_tab.dart';
 import 'package:url_launcher/url_launcher.dart';
-// ...
 
 class LandingPage extends StatelessWidget {
   final Function toPage;
@@ -143,7 +141,7 @@ class LandingPage extends StatelessWidget {
                                           "Study Material for phy and chem sem",
                                       onClick: () {
                                         Navigator.pushNamed(
-                                            context, "/firstyearstudy");
+                                            context, "/first-year-sm");
                                       },
                                     ),
                                     YearWiseTile(
@@ -152,7 +150,7 @@ class LandingPage extends StatelessWidget {
                                           "Study Material for all departments",
                                       onClick: () {
                                         Navigator.pushNamed(
-                                            context, "/firstyearstudy");
+                                            context, "/second-year-sm");
                                       },
                                     ),
                                     YearWiseTile(
@@ -161,7 +159,7 @@ class LandingPage extends StatelessWidget {
                                           "Study Material for phy and chem sem",
                                       onClick: () {
                                         Navigator.pushNamed(
-                                            context, "/firstyearstudy");
+                                            context, "/third-year-sm");
                                       },
                                     ),
                                     YearWiseTile(
@@ -170,7 +168,7 @@ class LandingPage extends StatelessWidget {
                                           "Study Material for all departments",
                                       onClick: () {
                                         Navigator.pushNamed(
-                                            context, "/firstyearstudy");
+                                            context, "/fourth-year-sm");
                                       },
                                     )
                                   ],

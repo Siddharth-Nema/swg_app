@@ -64,32 +64,28 @@ class StudyMaterial extends StatelessWidget {
                   year: "First",
                   desc: "Study Material for phy and chem sem",
                   onClick: () {
-                    Navigator.pushNamed(context, "/firstyearstudy");
+                    Navigator.pushNamed(context, "/first-year-sm");
                   },
                 ),
                 YearWiseTile(
                   year: "Second",
                   desc: "Study Material for all departments",
                   onClick: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const SecondYearSM(),
-                        ));
+                    Navigator.pushNamed(context, "/second-year-sm");
                   },
                 ),
                 YearWiseTile(
                   year: "Third",
                   desc: "Study Material for phy and chem sem",
                   onClick: () {
-                    Navigator.pushNamed(context, "/firstyearstudy");
+                    Navigator.pushNamed(context, "/third-year-sm");
                   },
                 ),
                 YearWiseTile(
                   year: "Fourth",
                   desc: "Study Material for all departments",
                   onClick: () {
-                    Navigator.pushNamed(context, "/firstyearstudy");
+                    Navigator.pushNamed(context, "/fourth-year-sm");
                   },
                 )
               ],

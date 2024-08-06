@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:swg_flutter/constants.dart';
-import 'package:swg_flutter/widgets/StudyMaterial/DepressedButton.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:swg_flutter/views/subviews/YearWiseStudyMaterial/coming_soon.dart';
 
-class FirstYearSM extends StatelessWidget {
-  const FirstYearSM({super.key});
+class ThirdYearSM extends StatelessWidget {
+  const ThirdYearSM({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -41,13 +40,12 @@ class FirstYearSM extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Image.asset(
-                  // "https://cdn-icons-png.flaticon.com/512/2847/2847502.png",
                   "assets/images/books.png",
                   height: 100,
                 ),
               ),
               const Text(
-                "Study Material \n for Freshers",
+                "Study Material \n for Third Year Students",
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
@@ -76,24 +74,11 @@ class FirstYearSM extends StatelessWidget {
                           )),
                 ),
               ),
-              DepressedButton(
-                  text: 'Study Material',
-                  onPressed: () {
-                    launchUrl(Uri.parse(
-                        "https://drive.google.com/drive/folders/1cZjU_l2NUIuxnRofN30DqavQZ1tHr4Wy"));
-                  }),
-              // const DepressedButton(text: 'Chemistry Sem'),
-              DepressedButton(
-                  text: 'Previous Year Papers',
-                  onPressed: () {
-                    launchUrl(Uri.parse(
-                        "https://drive.google.com/drive/folders/14TZrcnxgnkd3ctlNt3eNyly0F3L5GyUs"));
-                  }),
-              DepressedButton(
-                  text: 'NPTEL Channel',
-                  onPressed: () {
-                    launchUrl(Uri.parse("https://www.youtube.com/@iit"));
-                  })
+              //coming soon
+
+              const Expanded(
+                child: SMComingSoon(),
+              ),
             ],
           ),
         ),
