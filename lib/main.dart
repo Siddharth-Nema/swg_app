@@ -1,13 +1,18 @@
+import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:rxdart/subjects.dart';
 import 'package:swg_flutter/BaseLayout.dart';
 import 'package:swg_flutter/LoginPage/LoginPage.dart';
 import 'package:swg_flutter/constants.dart';
 import 'package:swg_flutter/firebase_options.dart';
 import 'package:swg_flutter/logoView.dart';
+import 'package:swg_flutter/utils/notification.dart';
 import 'package:swg_flutter/views/CDC/CDCIntershipPage.dart';
 import 'package:swg_flutter/views/ProfileView.dart';
 import 'package:swg_flutter/views/SocietiesPage.dart';
@@ -16,9 +21,25 @@ import 'package:swg_flutter/views/subviews/BenifitsOfInstiIdPage.dart';
 import 'package:swg_flutter/views/subviews/EventView.dart';
 import 'package:swg_flutter/views/subviews/KnowYourDepartment.dart';
 import 'package:swg_flutter/views/subviews/NoticeBoard.dart';
-import 'package:swg_flutter/views/subviews/YearWiseStudyMaterial/FirstYearSM%20copy.dart';
+import 'package:swg_flutter/views/subviews/YearWiseStudyMaterial/first_year_sm.dart';
+import 'package:swg_flutter/views/subviews/YearWiseStudyMaterial/fourth_year_sm.dart';
+import 'package:swg_flutter/views/subviews/YearWiseStudyMaterial/second_year_sm.dart';
+import 'package:swg_flutter/views/subviews/YearWiseStudyMaterial/third_year_sm.dart';
 import 'package:swg_flutter/views/subviews/mentor_mentee_page.dart';
 import 'package:swg_flutter/views/subviews/ourTeamPage.dart';
+
+// used to pass messages from event handler to the UI
+final messageStreamController = BehaviorSubject<RemoteMessage>();
+Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  // showNotification(message);
+  if (kDebugMode) {
+    print("Handler in main.dart");
+    print("Handling a background message: ${message.messageId}");
+    print('Message data: ${message.data}');
+    print('Message notification: ${message.notification?.title}');
+    print('Message notification: ${message.notification?.body}');
+  }
+}
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,11 +49,73 @@ void main() async {
   FirebaseFirestore.instance.settings = const Settings(
     persistenceEnabled: false,
   );
+  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+
+  AwesomeNotifications().initialize(
+      null,
+      [
+        NotificationChannel(
+          channelGroupKey: 'basic_channel_group',
+          channelKey: 'basic_channel',
+          channelName: 'Basic notifications',
+          channelDescription: 'Notification channel for basic tests',
+          ledColor: Colors.white,
+          importance: NotificationImportance.High,
+          channelShowBadge: true,
+          defaultRingtoneType: DefaultRingtoneType.Notification,
+          playSound: true,
+          enableVibration: true,
+          vibrationPattern: Int64List.fromList([1000, 1000, 2000, 1000, 3000]),
+        )
+      ],
+      // Channel groups are only visual and are not required
+      channelGroups: [
+        NotificationChannelGroup(
+          channelGroupKey: 'basic_channel_group',
+          channelGroupName: 'Basic group',
+        )
+      ],
+      debug: true);
+  AwesomeNotifications().isNotificationAllowed().then((isAllowed) {
+    if (!isAllowed) {
+      AwesomeNotifications().requestPermissionToSendNotifications();
+    }
+  });
+
+  final messaging = FirebaseMessaging.instance;
+
+  messaging.setForegroundNotificationPresentationOptions(
+    alert: true, // Required to display a heads up notification
+    badge: true,
+    sound: true,
+  );
   runApp(const MainApp());
 }
 
-class MainApp extends StatelessWidget {
+class MainApp extends StatefulWidget {
   const MainApp({super.key});
+
+  @override
+  State<MainApp> createState() => _MainAppState();
+}
+
+class _MainAppState extends State<MainApp> {
+  @override
+  void initState() {
+    FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
+      if (kDebugMode) {
+        print('A new onMessageOpenedApp event was published!');
+      }
+
+      messageStreamController.sink.add(message);
+    });
+
+    FirebaseMessaging.onMessage.listen(foregroundMessageHandler(context));
+
+    setUpAwesomeNotif();
+
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -106,8 +189,7 @@ class MainApp extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      // initialRoute: '/',
-      initialRoute: '/mentor-mentee',
+      initialRoute: '/',
       routes: {
         'logo': (context) => const LogoView(),
         '/login': (context) => const LoginPage(),
@@ -120,7 +202,10 @@ class MainApp extends StatelessWidget {
             ),
         '/cdcinternshipblogs': (context) => const CDCIntershipPage(),
         '/event-view': (context) => EventView(event: event),
-        '/firstyearstudy': (context) => const FirstYearSM(),
+        '/first-year-sm': (context) => const FirstYearSM(),
+        '/second-year-sm': (context) => const SecondYearSM(),
+        '/third-year-sm': (context) => const ThirdYearSM(),
+        '/fourth-year-sm': (context) => const FourthYearSM(),
         '/societies': (context) => const SocietiesPage(),
         '/knowyourdep': (context) => const KnowYourDepartment(),
         '/benefitsofinsti': (context) => const BenifitsOfInstiId(),

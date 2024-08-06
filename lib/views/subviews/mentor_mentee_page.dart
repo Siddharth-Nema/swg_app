@@ -14,6 +14,24 @@ class _MentorMenteePageState extends State<MentorMenteePage> {
   Map<String, dynamic>? mentorData;
   List<Map<String, dynamic>> coMentees = [];
 
+  @override
+  void initState() {
+    super.initState();
+    _rollNoController.addListener(() {
+      final text = _rollNoController.text.toUpperCase();
+      _rollNoController.value = _rollNoController.value.copyWith(
+        text: text,
+        selection: TextSelection.collapsed(offset: text.length),
+      );
+    });
+  }
+
+  @override
+  void dispose() {
+    _rollNoController.dispose();
+    super.dispose();
+  }
+
   Future<void> fetchMenteeData(String rollNo) async {
     final collection =
         FirebaseFirestore.instance.collection('MentorMenteeData');
@@ -26,7 +44,7 @@ class _MentorMenteePageState extends State<MentorMenteePage> {
       final mentorName = menteeData['Mentor Name'] != "NaN"
           ? menteeData['Mentor Name']
           : menteeData['Roll No. 1'];
-      final mentorRollNo = menteeData['Mentor Roll No'].toString() != "NaN"
+      final mentorRollNo = menteeData['Roll no.'].toString() != "NaN"
           ? menteeData['Mentor Roll No']
           : menteeData['Roll No.1'];
 

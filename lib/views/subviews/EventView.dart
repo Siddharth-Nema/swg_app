@@ -66,7 +66,6 @@ class EventView extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          // const SizedBox(height: 10),
                           Text(
                             "Date : ${event.date}",
                             style: const TextStyle(
@@ -74,7 +73,7 @@ class EventView extends StatelessWidget {
                                 fontWeight: FontWeight.w500,
                                 color: Colors.white),
                           ),
-                          // const SizedBox(height: 10),
+
                           Text(
                             "Time : ${event.time}",
                             style: const TextStyle(
