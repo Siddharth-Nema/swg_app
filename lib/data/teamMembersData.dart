@@ -55,8 +55,7 @@ List<Map<String, dynamic>> SMData = [
     'facebookUrl':
         'https://www.facebook.com/profile.php?id=61550226501699&sk=about',
     'instaUrl': 'https://www.instagram.com/justt.moli/',
-    'linkedinUrl':
-        'www.linkedin.com/in/moli-maheshwari-9b796a285', // Notice the missing protocol (http/https)
+    'linkedinUrl': 'https://www.linkedin.com/in/moli-maheshwari-9b796a285',
     'imageUrl':
         'https://drive.usercontent.google.com/download?id=16aj6Q9RYcZe3ukbFC5voQxnteAV-QOn4&export=view&authuser=0',
     'name': 'Moli Maheshwari',
@@ -143,8 +142,7 @@ List<Map<String, dynamic>> SMData = [
   {
     'facebookUrl': 'https://www.facebook.com/narsimha.bhukya.775/',
     'instaUrl': 'https://www.instagram.com/shashikumarbhukya/',
-    'linkedinUrl':
-        'https://www.linkedin.com/me?trk=p_mwlite_feed-secondary_nav', // Notice the incomplete LinkedIn URL
+    'linkedinUrl': 'https://www.linkedin.com/in/shashi-kumar-bhukya-0882b8290/',
     'imageUrl':
         'https://drive.usercontent.google.com/download?id=1LNjd3Ofp-jpIOyt_7-IctLWfX0xq60Fp&export=view&authuser=0',
     'name': 'Bhukya Shashi Kumar',
@@ -226,8 +224,7 @@ List<Map<String, dynamic>> SMData = [
   },
   {
     'facebookUrl': 'https://www.facebook.com/profile.php?id=61550776423104',
-    'instaUrl':
-        '', // Handle missing Instagram URL (consider placeholder or null value)
+    'instaUrl': '',
     'linkedinUrl': 'https://www.linkedin.com/in/rithvik-thota-17a7b1290/',
     'imageUrl':
         'https://drive.usercontent.google.com/download?id=1-1-XCiIsJrwVTY1EA0Yr4DhMlLo_l6lK&export=view&authuser=0',
@@ -238,8 +235,7 @@ List<Map<String, dynamic>> SMData = [
   },
   {
     'facebookUrl': 'https://www.facebook.com/profile.php?id=61551018450284',
-    'instaUrl':
-        'https://www.instagram.com/aishh_h2723/', // Handle missing Instagram URL (consider placeholder or null value)
+    'instaUrl': 'https://www.instagram.com/aishh_h2723/',
     'linkedinUrl': 'https://www.linkedin.com/in/aishwarya-dehariya-1264ab282/',
     'imageUrl':
         'https://media.licdn.com/dms/image/D4D03AQG4LEE4-KgFmw/profile-displayphoto-shrink_400_400/0/1714998391956?e=1727308800&v=beta&t=G6fBuVM4q5SL6rlkF5YfFf7SBTn1_tGHXxC1-Q1CiWA',
@@ -251,10 +247,7 @@ List<Map<String, dynamic>> SMData = [
   {
     'facebookUrl':
         'https://www.facebook.com/profile.php?id=100012078606272&name=xhp_nt__fb__action__open_user',
-    // Consider ethical implications and potential privacy violations of including a full Facebook profile URL if the user doesn't have a public profile.
-    //  - You might want to replace it with a placeholder or omit it entirely depending on your use case.
-    'instaUrl':
-        '', // Handle missing Instagram URL (consider placeholder or null value)
+    'instaUrl': '',
     'linkedinUrl':
         'https://www.linkedin.com/in/harsh-gurjar-0504bb290?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
     'imageUrl':
@@ -287,10 +280,9 @@ List<Map<String, dynamic>> HeadData = [
     'linkedinUrl': 'https://www.linkedin.com/in/akshat-kapoor-7955b6259/',
     'imageUrl': 'https://swgiitkgp.org/assets/images/akshat.jpg',
     'name': 'Akshat Kapoor',
-    'smAcademicSession': '2023-24', // Previous academic session
+    'smAcademicSession': '2023-24',
     'rollNo': '22CH10089',
-    'headAcademicSession':
-        '2024-25', // Head academic session (might need clarification)
+    'headAcademicSession': '2024-25',
   },
   {
     'facebookUrl':
@@ -299,10 +291,9 @@ List<Map<String, dynamic>> HeadData = [
     'linkedinUrl': 'https://www.linkedin.com/in/astha-kumari-980170259',
     'imageUrl': 'https://swgiitkgp.org/assets/images/astha.jpg',
     'name': 'Astha Kumari',
-    'smAcademicSession': '2023-24', // Previous academic session
+    'smAcademicSession': '2023-24',
     'rollNo': '22MI10018',
-    'headAcademicSession':
-        '2024-25', // Head academic session (might need clarification)
+    'headAcademicSession': '2024-25',
   },
   {
     'facebookUrl':
@@ -312,10 +303,9 @@ List<Map<String, dynamic>> HeadData = [
         'https://www.linkedin.com/in/astitvaprofileview?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
     'imageUrl': 'https://swgiitkgp.org/assets/images/astitva.jpg',
     'name': 'Astitva Srivastava',
-    'smAcademicSession': '2023-24', // Previous academic session
+    'smAcademicSession': '2023-24',
     'rollNo': '22EC10022',
-    'headAcademicSession':
-        '2024-25', // Head academic session (might need clarification)
+    'headAcademicSession': '2024-25',
   },
   {
     'facebookUrl': 'https://www.facebook.com/bhawesh.kukreja.5?mibextid=ZbWKwL',
@@ -323,10 +313,9 @@ List<Map<String, dynamic>> HeadData = [
     'linkedinUrl': 'https://www.linkedin.com/in/bhawesh-kukreja-430a46257',
     'imageUrl': 'https://swgiitkgp.org/assets/images/bhawesh.jpg',
     'name': 'Bhawesh Kukreja',
-    'smAcademicSession': '2023-24', // Previous academic session
+    'smAcademicSession': '2023-24',
     'rollNo': '22AR10003',
-    'headAcademicSession':
-        '2024-25', // Head academic session (might need clarification)
+    'headAcademicSession': '2024-25',
   },
   {
     'facebookUrl': 'https://www.facebook.com/shravan.barad',
@@ -335,10 +324,9 @@ List<Map<String, dynamic>> HeadData = [
         'https://www.linkedin.com/in/shravan-barad-290923257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
     'imageUrl': 'https://swgiitkgp.org/assets/images/shravan.jpg',
     'name': 'Shravan Barad',
-    'smAcademicSession': '2023-24', // Previous academic session
+    'smAcademicSession': '2023-24',
     'rollNo': '22GG10046',
-    'headAcademicSession':
-        '2024-25', // Head academic session (might need clarification)
+    'headAcademicSession': '2024-25',
   },
   {
     'facebookUrl':
@@ -347,21 +335,19 @@ List<Map<String, dynamic>> HeadData = [
     'linkedinUrl': 'https://www.linkedin.com/in/shashank-tiwari-9b16a724b',
     'imageUrl': 'https://swgiitkgp.org/assets/images/shashank.jpg',
     'name': 'Shashank Tiwari',
-    'smAcademicSession': '2023-24', // Previous academic session
+    'smAcademicSession': '2023-24',
     'rollNo': '22AR10027',
-    'headAcademicSession':
-        '2024-25', // Head academic session (might need clarification)
+    'headAcademicSession': '2024-25',
   },
   {
     'facebookUrl': 'https://www.facebook.com/profile.php?id=100088553164652',
     'instaUrl': '',
     'linkedinUrl':
         'https://www.linkedin.com/in/vumika-ghosh-b89463258?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
-    'imageUrl': 'https://swgiitkgp.org/assets/images/bhawesh.jpg',
+    'imageUrl': 'https://swgiitkgp.org/assets/images/vumika.jpg',
     'name': 'Vumika Ghosh',
-    'smAcademicSession': '2023-24', // Previous academic session
+    'smAcademicSession': '2023-24',
     'rollNo': '22ME10096',
-    'headAcademicSession':
-        '2024-25', // Head academic session (might need clarification)
+    'headAcademicSession': '2024-25',
   },
 ];
