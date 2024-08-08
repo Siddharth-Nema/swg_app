@@ -692,24 +692,27 @@ class EventBanner extends StatelessWidget {
                     children: [
                       Text("Carrer Orientation Session",
                           style: TextStyle(
-                              fontSize: 20,
+                              fontSize: 18,
                               fontWeight: FontWeight.bold,
                               color: Color.fromRGBO(241, 191, 87, 1))),
                       Text("Student Welfare Group",
                           style: TextStyle(
-                              fontSize: 18,
+                              fontSize: 14,
                               fontWeight: FontWeight.w600,
                               color: Colors.white)),
                       Text("Date and Time: ",
                           style: TextStyle(
+                              fontSize: 13,
                               fontWeight: FontWeight.w500,
                               color: Colors.white)),
                       Text("Location: ",
                           style: TextStyle(
+                              fontSize: 13,
                               fontWeight: FontWeight.w500,
                               color: Colors.white)),
                       Text("Target Audience:",
                           style: TextStyle(
+                              fontSize: 13,
                               fontWeight: FontWeight.w500,
                               color: Colors.white)),
                     ],
@@ -721,7 +724,7 @@ class EventBanner extends StatelessWidget {
                   right: 8,
                   child: Text("Know More >",
                       style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 12,
                           fontWeight: FontWeight.w600,
                           color: Colors.white,
                           decoration: TextDecoration.underline)))
