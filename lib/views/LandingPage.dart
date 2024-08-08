@@ -360,14 +360,17 @@ class LandingPage extends StatelessWidget {
                                     },
                                   ),
                                 ),
+                                const SizedBox(
+                                  height: 3,
+                                ),
                                 Text(
                                   e.name,
                                   maxLines: 2,
                                   overflow: TextOverflow.ellipsis,
                                   textAlign: TextAlign.center,
                                   style: const TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.bold),
+                                    fontSize: 14,
+                                  ),
                                 )
                               ],
                             ),
@@ -459,14 +462,13 @@ class LandingPage extends StatelessWidget {
                           children: [
                             Image.asset(
                               doc["image"]!,
-                              height: 50,
+                              height: 40,
                             ),
                             const SizedBox(height: 10),
                             Text(
                               doc["title"]!,
                               textAlign: TextAlign.center,
-                              style: const TextStyle(
-                                  fontSize: 16, fontWeight: FontWeight.bold),
+                              style: const TextStyle(fontSize: 15),
                             )
                           ],
                         ),
@@ -786,11 +788,14 @@ class DepartmentCard extends StatelessWidget {
         children: [
           Image.asset(
             department.image,
-            height: 50,
+            height: 40,
+          ),
+          const SizedBox(
+            height: 3,
           ),
           Text(
             department.code,
-            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 16),
           )
         ],
       ),

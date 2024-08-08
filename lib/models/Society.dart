@@ -94,6 +94,15 @@ final socsJson = [
     "linkedin_url": "Awaaz, IIT Kharagpur: Overview | LinkedIn"
   },
   {
+    "name": "Aroma",
+    "image_name": "aroma.jpeg",
+    "insta_url":
+        "https://www.instagram.com/aroma.iitkgp?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    "facebook_url": "https://www.facebook.com/aroma.iitkgp",
+    "linkedin_url":
+        "https://www.linkedin.com/company/technology-culinary-arts-society/"
+  },
+  {
     "name": "Debating Society, IIT Kharagpur",
     "image_name": "debsoc.png",
     "insta_url":
@@ -109,15 +118,6 @@ final socsJson = [
         "https://www.instagram.com/ambar_iitkgp?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
     "facebook_url": "(20+) Ambar - IIT Kharagpur | Facebook",
     "linkedin_url": "Ambar IIT Kharagpur: Overview | LinkedIn"
-  },
-  {
-    "name": "Aroma",
-    "image_name": "aroma.jpeg",
-    "insta_url":
-        "https://www.instagram.com/aroma.iitkgp?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
-    "facebook_url": "https://www.facebook.com/aroma.iitkgp",
-    "linkedin_url":
-        "https://www.linkedin.com/company/technology-culinary-arts-society/"
   },
   {
     "name": "Breakfree: Technology dance Society",

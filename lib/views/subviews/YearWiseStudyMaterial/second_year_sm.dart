@@ -22,10 +22,24 @@ class SecondYearSM extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actionsIconTheme: const IconThemeData(color: Colors.black),
+        leading: IconButton(
+            icon: const Icon(
+              Icons.chevron_left,
+              color: Colors.black,
+              size: 36,
+            ),
+            color: Colors.black,
+            onPressed: () {
+              Navigator.of(context).pop();
+            }),
+        centerTitle: true,
         title: const Text(
-          'Second Year Study Material',
+          "Study Material",
           style: TextStyle(color: Colors.black),
         ),
+        shadowColor: Colors.transparent,
+        backgroundColor: Colors.transparent,
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
